@@ -1,20 +1,18 @@
 {
   "node": true,
   "browser": false,
-  "strict": false,
   "curly": true,
   "eqeqeq": true,
   "undef": true,
-  "unused": true,
   "trailing": true,
   "indent": 2,
   "quotmark": "single",
-  "globals": {
-    "describe": true,
-    "it": true,
-    "before": true,
-    "after": true,
-    "beforeEach": true,
-    "afterEach": true
-  }
+  "predef": [
+    "describe",
+    "it",
+    "before",
+    "after",
+    "beforeEach",
+    "afterEach"
+  ]
 }
