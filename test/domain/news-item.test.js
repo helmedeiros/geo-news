@@ -48,3 +48,17 @@ describe('NewsItem.equals', function () {
     expect(newsItem.equals(a, b)).to.equal(false);
   });
 });
+
+describe('NewsItem.byPublishedAtDesc', function () {
+  it('sorts newer items before older ones', function () {
+    var older = newsItem.create(sample({
+      id: 'a', publishedAt: new Date('2012-07-01T00:00:00Z')
+    }));
+    var newer = newsItem.create(sample({
+      id: 'b', publishedAt: new Date('2012-07-02T00:00:00Z')
+    }));
+    var sorted = [older, newer].sort(newsItem.byPublishedAtDesc);
+    expect(sorted[0].id).to.equal('b');
+    expect(sorted[1].id).to.equal('a');
+  });
+});
