@@ -21,3 +21,21 @@ describe('BoundingBox.create', function () {
     expect(function () { bbox.create(0, 30, 10, -30); }).to['throw'](RangeError);
   });
 });
+
+describe('BoundingBox.contains', function () {
+  var southAmerica = bbox.create(-60, -90, 15, -30);
+
+  it('returns true for a point inside the box', function () {
+    expect(bbox.contains(southAmerica, -34.61, -58.38)).to.equal(true);
+  });
+
+  it('returns true for a point on the edge of the box', function () {
+    expect(bbox.contains(southAmerica, -60, -90)).to.equal(true);
+    expect(bbox.contains(southAmerica, 15, -30)).to.equal(true);
+  });
+
+  it('returns false for a point outside the box', function () {
+    expect(bbox.contains(southAmerica, 40, -74)).to.equal(false);
+    expect(bbox.contains(southAmerica, -34.61, 20)).to.equal(false);
+  });
+});
