@@ -49,6 +49,19 @@ describe('NewsItem.equals', function () {
   });
 });
 
+describe('NewsItem.withLocations', function () {
+  it('returns a new item with the given extracted locations', function () {
+    var item = newsItem.create(sample());
+    var enriched = newsItem.withLocations(item, [
+      { name: 'Buenos Aires', lat: -34.61, lon: -58.38 }
+    ]);
+    expect(enriched.id).to.equal(item.id);
+    expect(enriched.extractedLocations).to.have.length(1);
+    expect(enriched.extractedLocations[0].name).to.equal('Buenos Aires');
+    expect(item.extractedLocations).to.have.length(0);
+  });
+});
+
 describe('NewsItem.byPublishedAtDesc', function () {
   it('sorts newer items before older ones', function () {
     var older = newsItem.create(sample({
