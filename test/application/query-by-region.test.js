@@ -59,3 +59,29 @@ describe('QueryByRegionUseCase (publisher mode)', function () {
     });
   });
 });
+
+describe('QueryByRegionUseCase (event mode)', function () {
+  it('returns items whose extracted locations fall inside the bbox', function (done) {
+    var argentinaStoryFromNyt = newsItem.withLocations(
+      newsItem.create({
+        id: '1', title: 'Argentina elects', link: 'h',
+        publishedAt: new Date(), portalId: nytimes.id
+      }),
+      [{ name: 'Buenos Aires', lat: -34.61, lon: -58.38 }]
+    );
+    var usStoryFromNyt = newsItem.withLocations(
+      newsItem.create({
+        id: '2', title: 'New York wins', link: 'h',
+        publishedAt: new Date(), portalId: nytimes.id
+      }),
+      [{ name: 'New York', lat: 40.71, lon: -74.0 }]
+    );
+    var uc = build([argentinaStoryFromNyt, usStoryFromNyt]);
+    uc.execute({ mode: 'event', bbox: southAmerica }, function (err, items) {
+      expect(err).to.equal(null);
+      expect(items).to.have.length(1);
+      expect(items[0].id).to.equal('1');
+      done();
+    });
+  });
+});
