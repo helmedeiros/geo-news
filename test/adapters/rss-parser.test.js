@@ -46,4 +46,24 @@ describe('RssParser.parse', function () {
   it('rejects non-string input', function () {
     expect(function () { rssParser.parse(null); }).to['throw'](TypeError);
   });
+
+  it('parses Atom feeds when <feed> is the root element', function () {
+    var atom = [
+      '<?xml version="1.0"?>',
+      '<feed xmlns="http://www.w3.org/2005/Atom">',
+      '  <title>Sample</title>',
+      '  <entry>',
+      '    <title>Atom headline</title>',
+      '    <link href="http://example.com/a"/>',
+      '    <summary>Lead</summary>',
+      '    <updated>2013-01-24T12:00:00Z</updated>',
+      '  </entry>',
+      '</feed>'
+    ].join('\n');
+    var entries = rssParser.parse(atom);
+    expect(entries).to.have.length(1);
+    expect(entries[0].title).to.equal('Atom headline');
+    expect(entries[0].link).to.equal('http://example.com/a');
+    expect(entries[0].summary).to.equal('Lead');
+  });
 });
