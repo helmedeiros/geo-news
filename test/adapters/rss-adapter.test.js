@@ -51,13 +51,25 @@ describe('RssAdapter', function () {
     });
   });
 
-  it('propagates HTTP errors to the callback', function (done) {
+  it('tags HTTP errors with code E_HTTP', function (done) {
     var adapter = rssAdapter.create({
       httpClient: fakeHttp(null, new Error('network')),
       parser: fakeParser([])
     });
     adapter.fetch(clarin, function (err) {
-      expect(err.message).to.equal('network');
+      expect(err.code).to.equal('E_HTTP');
+      expect(err.cause.message).to.equal('network');
+      done();
+    });
+  });
+
+  it('tags parse failures with code E_PARSE', function (done) {
+    var adapter = rssAdapter.create({
+      httpClient: fakeHttp('not xml'),
+      parser: { parse: function () { throw new Error('bad xml'); } }
+    });
+    adapter.fetch(clarin, function (err) {
+      expect(err.code).to.equal('E_PARSE');
       done();
     });
   });
