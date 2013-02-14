@@ -46,7 +46,22 @@ describe('RssAdapter', function () {
       expect(err).to.equal(null);
       expect(items).to.have.length(1);
       expect(items[0].portalId).to.equal('ar-clarin');
-      expect(items[0].id).to.equal('ar-clarin:http://x/1');
+      expect(items[0].id).to.equal('ar-clarin:x/1');
+      done();
+    });
+  });
+
+  it('strips scheme, query and trailing slash when canonicalising ids', function (done) {
+    var entries = [{
+      title: 't', link: 'https://example.com/path/?utm=1',
+      summary: '', publishedAt: new Date()
+    }];
+    var adapter = rssAdapter.create({
+      httpClient: fakeHttp('<rss/>'),
+      parser: fakeParser(entries)
+    });
+    adapter.fetch(clarin, function (err, items) {
+      expect(items[0].id).to.equal('ar-clarin:example.com/path');
       done();
     });
   });
