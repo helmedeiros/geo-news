@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Clarín</title>
+    <link>http://example.com/clarin</link>
+    <description>Últimas noticias</description>
+    <item>
+      <title>Argentina rumbo a las elecciones</title>
+      <link>http://example.com/clarin/politica/argentina-rumbo</link>
+      <description>Cobertura especial</description>
+      <pubDate>Mon, 25 Feb 2013 08:30:00 -0300</pubDate>
+    </item>
+    <item>
+      <title>Buenos Aires bajo lluvia</title>
+      <link>http://example.com/clarin/clima/buenos-aires-lluvia</link>
+      <description><![CDATA[La ciudad amaneció con un fuerte temporal]]></description>
+      <pubDate>Mon, 25 Feb 2013 07:15:00 -0300</pubDate>
+    </item>
+  </channel>
+</rss>
