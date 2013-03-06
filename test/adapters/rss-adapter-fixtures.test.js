@@ -25,6 +25,12 @@ var clarin = portal.create({
   rss: 'http://example.com/clarin/rss'
 });
 
+var nyt = portal.create({
+  id: 'us-nyt', name: 'NYT', country: 'US',
+  city: 'New York', lat: 40.71, lon: -74.0,
+  rss: 'http://example.com/nyt/world.xml'
+});
+
 describe('RssAdapter against Clarín-style RSS', function () {
   it('extracts every story with portal id and canonical id', function (done) {
     var adapter = rssAdapter.create({
@@ -39,6 +45,23 @@ describe('RssAdapter against Clarín-style RSS', function () {
         expect(i.id).to.match(/^ar-clarin:/);
       });
       expect(items[0].title).to.equal('Argentina rumbo a las elecciones');
+      done();
+    });
+  });
+});
+
+describe('RssAdapter against NYT-style Atom', function () {
+  it('reads <entry>, <link href=...> and <summary>', function (done) {
+    var adapter = rssAdapter.create({
+      httpClient: fakeHttp(loadFixture('nyt-style-atom.xml')),
+      parser: rssParser
+    });
+    adapter.fetch(nyt, function (err, items) {
+      expect(err).to.equal(null);
+      expect(items).to.have.length(2);
+      expect(items[0].title).to.equal('Senate debates new bill');
+      expect(items[0].link).to.equal('http://example.com/nyt/world/senate-bill');
+      expect(items[0].portalId).to.equal('us-nyt');
       done();
     });
   });

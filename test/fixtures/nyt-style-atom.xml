@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>NYT — World</title>
+  <link href="http://example.com/nyt/world"/>
+  <updated>2013-03-06T11:00:00Z</updated>
+  <entry>
+    <title>Senate debates new bill</title>
+    <link href="http://example.com/nyt/world/senate-bill"/>
+    <summary>Lawmakers gather in Washington for a vote</summary>
+    <updated>2013-03-06T10:42:00Z</updated>
+  </entry>
+  <entry>
+    <title>Hurricane forecast for Miami</title>
+    <link href="http://example.com/nyt/world/miami-hurricane"/>
+    <summary>The storm is expected to make landfall by Friday</summary>
+    <updated>2013-03-06T09:18:00Z</updated>
+  </entry>
+</feed>
