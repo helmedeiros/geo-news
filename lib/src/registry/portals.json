@@ -1,2 +1,28 @@
 {
+  "US": [
+    {
+      "id": "us-nyt",
+      "name": "The New York Times",
+      "city": "New York",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "rss": "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+    },
+    {
+      "id": "us-washpost",
+      "name": "The Washington Post",
+      "city": "Washington",
+      "lat": 38.9072,
+      "lon": -77.0369,
+      "rss": "http://feeds.washingtonpost.com/rss/national"
+    },
+    {
+      "id": "us-latimes",
+      "name": "Los Angeles Times",
+      "city": "Los Angeles",
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "rss": "http://www.latimes.com/rss2.0.xml"
+    }
+  ]
 }
