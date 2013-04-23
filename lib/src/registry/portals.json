@@ -24,5 +24,31 @@
       "lon": -118.2437,
       "rss": "http://www.latimes.com/rss2.0.xml"
     }
+  ],
+  "CA": [
+    {
+      "id": "ca-globeandmail",
+      "name": "The Globe and Mail",
+      "city": "Toronto",
+      "lat": 43.6532,
+      "lon": -79.3832,
+      "rss": "http://www.theglobeandmail.com/?service=rss"
+    },
+    {
+      "id": "ca-cbc",
+      "name": "CBC News",
+      "city": "Toronto",
+      "lat": 43.6532,
+      "lon": -79.3832,
+      "rss": "http://rss.cbc.ca/lineup/topstories.xml"
+    },
+    {
+      "id": "ca-nationalpost",
+      "name": "National Post",
+      "city": "Toronto",
+      "lat": 43.6532,
+      "lon": -79.3832,
+      "rss": "http://news.nationalpost.com/feed"
+    }
   ]
 }
