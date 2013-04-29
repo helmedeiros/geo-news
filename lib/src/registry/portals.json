@@ -50,5 +50,31 @@
       "lon": -79.3832,
       "rss": "http://news.nationalpost.com/feed"
     }
+  ],
+  "MX": [
+    {
+      "id": "mx-eluniversal",
+      "name": "El Universal",
+      "city": "Mexico City",
+      "lat": 19.4326,
+      "lon": -99.1332,
+      "rss": "http://www.eluniversal.com.mx/rss.xml"
+    },
+    {
+      "id": "mx-reforma",
+      "name": "Reforma",
+      "city": "Mexico City",
+      "lat": 19.4326,
+      "lon": -99.1332,
+      "rss": "http://www.reforma.com/rss/portada.xml"
+    },
+    {
+      "id": "mx-milenio",
+      "name": "Milenio",
+      "city": "Mexico City",
+      "lat": 19.4326,
+      "lon": -99.1332,
+      "rss": "http://www.milenio.com/rss"
+    }
   ]
 }
