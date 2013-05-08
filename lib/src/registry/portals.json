@@ -76,5 +76,31 @@
       "lon": -99.1332,
       "rss": "http://www.milenio.com/rss"
     }
+  ],
+  "AR": [
+    {
+      "id": "ar-clarin",
+      "name": "Clarín",
+      "city": "Buenos Aires",
+      "lat": -34.6037,
+      "lon": -58.3816,
+      "rss": "http://www.clarin.com/rss/lo-ultimo/"
+    },
+    {
+      "id": "ar-lanacion",
+      "name": "La Nación",
+      "city": "Buenos Aires",
+      "lat": -34.6037,
+      "lon": -58.3816,
+      "rss": "http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=1"
+    },
+    {
+      "id": "ar-pagina12",
+      "name": "Página/12",
+      "city": "Buenos Aires",
+      "lat": -34.6037,
+      "lon": -58.3816,
+      "rss": "http://www.pagina12.com.ar/diario/rss/principal.xml"
+    }
   ]
 }
