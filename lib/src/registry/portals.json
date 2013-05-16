@@ -102,5 +102,31 @@
       "lon": -58.3816,
       "rss": "http://www.pagina12.com.ar/diario/rss/principal.xml"
     }
+  ],
+  "BR": [
+    {
+      "id": "br-folha",
+      "name": "Folha de S.Paulo",
+      "city": "São Paulo",
+      "lat": -23.5505,
+      "lon": -46.6333,
+      "rss": "http://feeds.folha.uol.com.br/folha/topicos/rss091.xml"
+    },
+    {
+      "id": "br-globo",
+      "name": "O Globo",
+      "city": "Rio de Janeiro",
+      "lat": -22.9068,
+      "lon": -43.1729,
+      "rss": "http://oglobo.globo.com/rss/plantao.xml"
+    },
+    {
+      "id": "br-estadao",
+      "name": "Estadão",
+      "city": "São Paulo",
+      "lat": -23.5505,
+      "lon": -46.6333,
+      "rss": "http://www.estadao.com.br/rss/ultimas.xml"
+    }
   ]
 }
