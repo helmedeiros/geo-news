@@ -128,5 +128,57 @@
       "lon": -46.6333,
       "rss": "http://www.estadao.com.br/rss/ultimas.xml"
     }
+  ],
+  "CL": [
+    {
+      "id": "cl-emol",
+      "name": "Emol",
+      "city": "Santiago",
+      "lat": -33.4489,
+      "lon": -70.6693,
+      "rss": "http://www.emol.com/rss/index.asp"
+    },
+    {
+      "id": "cl-latercera",
+      "name": "La Tercera",
+      "city": "Santiago",
+      "lat": -33.4489,
+      "lon": -70.6693,
+      "rss": "http://www.latercera.com/rss"
+    },
+    {
+      "id": "cl-biobio",
+      "name": "BioBioChile",
+      "city": "Concepción",
+      "lat": -36.8270,
+      "lon": -73.0498,
+      "rss": "http://www.biobiochile.cl/rss/index.xml"
+    }
+  ],
+  "CO": [
+    {
+      "id": "co-eltiempo",
+      "name": "El Tiempo",
+      "city": "Bogotá",
+      "lat": 4.711,
+      "lon": -74.0721,
+      "rss": "http://www.eltiempo.com/rss/portada.xml"
+    },
+    {
+      "id": "co-elespectador",
+      "name": "El Espectador",
+      "city": "Bogotá",
+      "lat": 4.711,
+      "lon": -74.0721,
+      "rss": "http://www.elespectador.com/rss.xml"
+    },
+    {
+      "id": "co-semana",
+      "name": "Semana",
+      "city": "Bogotá",
+      "lat": 4.711,
+      "lon": -74.0721,
+      "rss": "http://www.semana.com/rss.xml"
+    }
   ]
 }
