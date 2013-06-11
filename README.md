@@ -30,10 +30,25 @@ geo.indexNews.execute(somePortal, function (err) {
 });
 ```
 
+## Bundled portals (v1, curated)
+
+| Country | Portals |
+|---|---|
+| 🇺🇸 United States | NYT, Washington Post, LA Times |
+| 🇨🇦 Canada | Globe and Mail, CBC News, National Post |
+| 🇲🇽 Mexico | El Universal, Reforma, Milenio |
+| 🇦🇷 Argentina | Clarín, La Nación, Página/12 |
+| 🇧🇷 Brazil | Folha de S.Paulo, O Globo, Estadão |
+| 🇨🇱 Chile | Emol, La Tercera, BioBioChile |
+| 🇨🇴 Colombia | El Tiempo, El Espectador, Semana |
+
+Embedders can override the registry by passing their own
+`PortalRegistryPort` to `wire()`.
+
 ## Status
 
-Pre-1.0. Domain, ports and a couple of in-memory adapters are in place; the
-RSS adapter and the curated portal registry land next.
+Pre-1.0. Domain, ports, RSS adapter and the seed of the portal registry are
+in. Location extraction and the map UI are next.
 
 ## License
 
