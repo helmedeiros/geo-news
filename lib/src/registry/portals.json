@@ -180,5 +180,31 @@
       "lon": -74.0721,
       "rss": "http://www.semana.com/rss.xml"
     }
+  ],
+  "PE": [
+    {
+      "id": "pe-elcomercio",
+      "name": "El Comercio",
+      "city": "Lima",
+      "lat": -12.0464,
+      "lon": -77.0428,
+      "rss": "http://elcomercio.pe/feed"
+    },
+    {
+      "id": "pe-rpp",
+      "name": "RPP Noticias",
+      "city": "Lima",
+      "lat": -12.0464,
+      "lon": -77.0428,
+      "rss": "http://rpp.pe/rss"
+    },
+    {
+      "id": "pe-larepublica",
+      "name": "La República",
+      "city": "Lima",
+      "lat": -12.0464,
+      "lon": -77.0428,
+      "rss": "http://larepublica.pe/rss/portada"
+    }
   ]
 }
