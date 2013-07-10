@@ -206,5 +206,57 @@
       "lon": -77.0428,
       "rss": "http://larepublica.pe/rss/portada"
     }
+  ],
+  "VE": [
+    {
+      "id": "ve-elnacional",
+      "name": "El Nacional",
+      "city": "Caracas",
+      "lat": 10.4806,
+      "lon": -66.9036,
+      "rss": "http://www.el-nacional.com/rss.xml"
+    },
+    {
+      "id": "ve-eluniversal",
+      "name": "El Universal (VE)",
+      "city": "Caracas",
+      "lat": 10.4806,
+      "lon": -66.9036,
+      "rss": "http://www.eluniversal.com/rss.xml"
+    },
+    {
+      "id": "ve-ultimasnoticias",
+      "name": "Últimas Noticias",
+      "city": "Caracas",
+      "lat": 10.4806,
+      "lon": -66.9036,
+      "rss": "http://www.ultimasnoticias.com.ve/rss/feed.xml"
+    }
+  ],
+  "EC": [
+    {
+      "id": "ec-eluniverso",
+      "name": "El Universo",
+      "city": "Guayaquil",
+      "lat": -2.1709,
+      "lon": -79.9224,
+      "rss": "http://www.eluniverso.com/rss/portada.xml"
+    },
+    {
+      "id": "ec-elcomercio",
+      "name": "El Comercio (EC)",
+      "city": "Quito",
+      "lat": -0.1807,
+      "lon": -78.4678,
+      "rss": "http://www.elcomercio.com/rss/portada.xml"
+    },
+    {
+      "id": "ec-eltelegrafo",
+      "name": "El Telégrafo",
+      "city": "Guayaquil",
+      "lat": -2.1709,
+      "lon": -79.9224,
+      "rss": "http://www.telegrafo.com.ec/rss"
+    }
   ]
 }
