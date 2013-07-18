@@ -258,5 +258,57 @@
       "lon": -79.9224,
       "rss": "http://www.telegrafo.com.ec/rss"
     }
+  ],
+  "BO": [
+    {
+      "id": "bo-eldeber",
+      "name": "El Deber",
+      "city": "Santa Cruz de la Sierra",
+      "lat": -17.7833,
+      "lon": -63.1822,
+      "rss": "http://www.eldeber.com.bo/rss/portada.xml"
+    },
+    {
+      "id": "bo-paginasiete",
+      "name": "Página Siete",
+      "city": "La Paz",
+      "lat": -16.4897,
+      "lon": -68.1193,
+      "rss": "http://www.paginasiete.bo/rss/index.xml"
+    },
+    {
+      "id": "bo-larazon",
+      "name": "La Razón",
+      "city": "La Paz",
+      "lat": -16.4897,
+      "lon": -68.1193,
+      "rss": "http://www.la-razon.com/rss/portada.xml"
+    }
+  ],
+  "PY": [
+    {
+      "id": "py-abc",
+      "name": "ABC Color",
+      "city": "Asunción",
+      "lat": -25.2637,
+      "lon": -57.5759,
+      "rss": "http://www.abc.com.py/rss.xml"
+    },
+    {
+      "id": "py-ultimahora",
+      "name": "Última Hora",
+      "city": "Asunción",
+      "lat": -25.2637,
+      "lon": -57.5759,
+      "rss": "http://www.ultimahora.com/rss/portada.xml"
+    },
+    {
+      "id": "py-lanacion",
+      "name": "La Nación (PY)",
+      "city": "Asunción",
+      "lat": -25.2637,
+      "lon": -57.5759,
+      "rss": "http://www.lanacion.com.py/rss.xml"
+    }
   ]
 }
