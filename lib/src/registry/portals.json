@@ -310,5 +310,31 @@
       "lon": -57.5759,
       "rss": "http://www.lanacion.com.py/rss.xml"
     }
+  ],
+  "UY": [
+    {
+      "id": "uy-elpais",
+      "name": "El País",
+      "city": "Montevideo",
+      "lat": -34.9011,
+      "lon": -56.1645,
+      "rss": "http://www.elpais.com.uy/rss/portada.xml"
+    },
+    {
+      "id": "uy-elobservador",
+      "name": "El Observador",
+      "city": "Montevideo",
+      "lat": -34.9011,
+      "lon": -56.1645,
+      "rss": "http://www.elobservador.com.uy/rss/portada.xml"
+    },
+    {
+      "id": "uy-larepublica",
+      "name": "La República (UY)",
+      "city": "Montevideo",
+      "lat": -34.9011,
+      "lon": -56.1645,
+      "rss": "http://www.republica.com.uy/rss/portada.xml"
+    }
   ]
 }
