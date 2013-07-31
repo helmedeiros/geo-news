@@ -336,5 +336,83 @@
       "lon": -56.1645,
       "rss": "http://www.republica.com.uy/rss/portada.xml"
     }
+  ],
+  "GY": [
+    {
+      "id": "gy-stabroek",
+      "name": "Stabroek News",
+      "city": "Georgetown",
+      "lat": 6.8013,
+      "lon": -58.1551,
+      "rss": "http://www.stabroeknews.com/feed/"
+    },
+    {
+      "id": "gy-kaieteur",
+      "name": "Kaieteur News",
+      "city": "Georgetown",
+      "lat": 6.8013,
+      "lon": -58.1551,
+      "rss": "http://www.kaieteurnewsonline.com/feed/"
+    },
+    {
+      "id": "gy-guyanachronicle",
+      "name": "Guyana Chronicle",
+      "city": "Georgetown",
+      "lat": 6.8013,
+      "lon": -58.1551,
+      "rss": "http://guyanachronicle.com/feed/"
+    }
+  ],
+  "SR": [
+    {
+      "id": "sr-dewest",
+      "name": "De West",
+      "city": "Paramaribo",
+      "lat": 5.852,
+      "lon": -55.2038,
+      "rss": "http://www.dewest.sr/feed/"
+    },
+    {
+      "id": "sr-starnieuws",
+      "name": "Starnieuws",
+      "city": "Paramaribo",
+      "lat": 5.852,
+      "lon": -55.2038,
+      "rss": "http://www.starnieuws.com/index.php/welcome/index/rss"
+    },
+    {
+      "id": "sr-suriname-herald",
+      "name": "Suriname Herald",
+      "city": "Paramaribo",
+      "lat": 5.852,
+      "lon": -55.2038,
+      "rss": "http://www.srherald.com/feed/"
+    }
+  ],
+  "GF": [
+    {
+      "id": "gf-franceguyane",
+      "name": "France-Guyane",
+      "city": "Cayenne",
+      "lat": 4.9224,
+      "lon": -52.3135,
+      "rss": "http://www.franceguyane.fr/rss/une"
+    },
+    {
+      "id": "gf-radiopeyi",
+      "name": "Radio Péyi",
+      "city": "Cayenne",
+      "lat": 4.9224,
+      "lon": -52.3135,
+      "rss": "http://www.radiopeyi.com/feed/"
+    },
+    {
+      "id": "gf-guyaweb",
+      "name": "Guyaweb",
+      "city": "Cayenne",
+      "lat": 4.9224,
+      "lon": -52.3135,
+      "rss": "http://www.guyaweb.com/feed/"
+    }
   ]
 }
