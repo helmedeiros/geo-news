@@ -58,4 +58,31 @@ describe('IndexNewsUseCase', function () {
       done();
     });
   });
+
+  it('skips items older than the configured cut-off when a clock is wired', function (done) {
+    var repo = inMemoryRepository.create();
+    var fixed = new Date('2013-09-11T12:00:00Z');
+    var clock = { now: function () { return fixed; } };
+    var older = {
+      id: 'old', title: 'old', link: 'http://x/old', summary: '',
+      publishedAt: new Date('2013-08-01T00:00:00Z'),
+      portalId: 'ar-clarin'
+    };
+    var newer = {
+      id: 'new', title: 'new', link: 'http://x/new', summary: '',
+      publishedAt: new Date('2013-09-11T00:00:00Z'),
+      portalId: 'ar-clarin'
+    };
+    var uc = indexNews.create({
+      feed: fakeFeed([older, newer]),
+      repository: repo,
+      clock: clock,
+      maxAgeDays: 7
+    });
+    uc.execute(clarin, function (err, count) {
+      expect(err).to.equal(null);
+      expect(count).to.equal(1);
+      done();
+    });
+  });
 });
