@@ -14,8 +14,8 @@ describe('bundled portals.json', function () {
     var key;
     for (key in doc) {
       if (doc.hasOwnProperty(key)) {
-        expect(doc[key].length).to.be.at.most(3);
-        expect(doc[key].length).to.be.at.least(1);
+        expect(doc[key].length).to.be.below(4);
+        expect(doc[key].length).to.be.above(0);
       }
     }
   });
