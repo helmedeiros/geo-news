@@ -10,5 +10,6 @@ describe('ports index', function () {
     expect(ports.portalRegistry.isImplementation).to.be.a('function');
     expect(ports.clock.isImplementation).to.be.a('function');
     expect(ports.locationExtractor.isImplementation).to.be.a('function');
+    expect(ports.geocoder.isImplementation).to.be.a('function');
   });
 });
