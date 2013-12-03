@@ -45,10 +45,21 @@ geo.indexNews.execute(somePortal, function (err) {
 Embedders can override the registry by passing their own
 `PortalRegistryPort` to `wire()`.
 
+## Location modes
+
+`queryByRegion.execute({ mode, bbox })` answers two distinct questions:
+
+* `publisher` — items whose publishing portal sits inside the bounding box.
+  Available immediately on any indexed item, no extraction required.
+* `event` — items whose extracted locations sit inside the bounding box.
+  Requires an `extractor` to be passed to `wire()`. The library bundles
+  `gazetteerExtractor` (offline, Americas-cities) and `compositeExtractor`
+  which chains it with a `GeocoderPort` fallback.
+
 ## Status
 
-Pre-1.0. Domain, ports, RSS adapter and the seed of the portal registry are
-in. Location extraction and the map UI are next.
+Pre-1.0. The library — domain, ports, RSS adapter, portal registry and
+location extraction — is in. The map UI lands next.
 
 ## License
 
