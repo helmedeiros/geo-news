@@ -13,5 +13,8 @@ describe('adapters index', function () {
     expect(adapters.nodeHttpClient.create).to.be.a('function');
     expect(adapters.htmlEntities.decode).to.be.a('function');
     expect(adapters.feedErrors.http).to.be.a('function');
+    expect(adapters.gazetteerExtractor.create).to.be.a('function');
+    expect(adapters.nominatimGeocoder.create).to.be.a('function');
+    expect(adapters.compositeExtractor.create).to.be.a('function');
   });
 });
