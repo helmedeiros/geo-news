@@ -1,0 +1,70 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color: #1c1c1c;
+  background: #f7f7f5;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #1c1c1c;
+  color: #f7f7f5;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mode-toggle button {
+  background: transparent;
+  color: inherit;
+  border: 1px solid #555;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+}
+
+.mode-toggle button.is-active {
+  background: #f7f7f5;
+  color: #1c1c1c;
+}
+
+.app-main {
+  display: flex;
+  height: calc(100% - 48px);
+}
+
+.app-map {
+  flex: 1 1 auto;
+}
+
+.app-headlines {
+  width: 360px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+  background: #fff;
+}
+
+.app-headlines .headline {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+}
+
+.app-headlines .headline a {
+  color: #1c1c1c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-headlines .meta {
+  color: #666;
+  font-size: 0.85rem;
+}

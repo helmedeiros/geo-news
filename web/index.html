@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>geo-news — Americas map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>geo-news</h1>
+    <nav class="mode-toggle" data-mode="publisher">
+      <button data-mode="publisher" class="is-active">publisher</button>
+      <button data-mode="event">event</button>
+    </nav>
+  </header>
+  <main class="app-main">
+    <section id="map" class="app-map"></section>
+    <aside id="headlines" class="app-headlines">
+      <p class="empty">Pan the map to load headlines.</p>
+    </aside>
+  </main>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/underscore/underscore-min.js"></script>
+  <script src="vendor/backbone/backbone-min.js"></script>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
