@@ -1,11 +1,19 @@
+/* global Backbone, GeoNewsMapView */
 'use strict';
-
-/**
- * Bootstrap stub. The map, mode toggle and headline list come online in
- * subsequent commits; for now this file simply marks the document body when
- * everything has loaded so the deploy can be smoke-tested.
- */
 
 (function () {
   document.body.setAttribute('data-app', 'geo-news');
+
+  var RegionQuery = Backbone.Model.extend({
+    defaults: {
+      mode: 'publisher',
+      south: -60,
+      west: -90,
+      north: 15,
+      east: -30
+    }
+  });
+
+  var regionQuery = new RegionQuery();
+  new GeoNewsMapView({ regionQuery: regionQuery });
 }());
