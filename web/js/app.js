@@ -1,4 +1,4 @@
-/* global Backbone, GeoNewsMapView */
+/* global Backbone, GeoNewsMapView, GeoNewsModeToggleView */
 'use strict';
 
 (function () {
@@ -16,4 +16,5 @@
 
   var regionQuery = new RegionQuery();
   new GeoNewsMapView({ regionQuery: regionQuery });
+  new GeoNewsModeToggleView({ regionQuery: regionQuery });
 }());
