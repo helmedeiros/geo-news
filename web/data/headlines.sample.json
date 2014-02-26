@@ -1,0 +1,57 @@
+[
+  {
+    "id": "ar-clarin-1",
+    "title": "Argentina rumbo a las elecciones",
+    "link": "http://example.com/clarin/politica/argentina-rumbo",
+    "summary": "Cobertura especial desde Buenos Aires",
+    "publishedAt": "2014-02-24T08:30:00-03:00",
+    "portalId": "ar-clarin",
+    "extractedLocations": [
+      { "name": "Buenos Aires", "lat": -34.6037, "lon": -58.3816, "confidence": 0.8 }
+    ]
+  },
+  {
+    "id": "br-folha-1",
+    "title": "São Paulo enfrenta crise hídrica",
+    "link": "http://example.com/folha/cotidiano/sp-crise-hidrica",
+    "summary": "Reservatórios em níveis críticos",
+    "publishedAt": "2014-02-25T07:15:00-03:00",
+    "portalId": "br-folha",
+    "extractedLocations": [
+      { "name": "São Paulo", "lat": -23.5505, "lon": -46.6333, "confidence": 0.9 }
+    ]
+  },
+  {
+    "id": "us-nyt-1",
+    "title": "Buenos Aires reacts to new currency policy",
+    "link": "http://example.com/nyt/world/argentina-currency",
+    "summary": "Markets respond after announcement",
+    "publishedAt": "2014-02-25T11:00:00-05:00",
+    "portalId": "us-nyt",
+    "extractedLocations": [
+      { "name": "Buenos Aires", "lat": -34.6037, "lon": -58.3816, "confidence": 0.7 }
+    ]
+  },
+  {
+    "id": "cl-emol-1",
+    "title": "Santiago amanece con neblina",
+    "link": "http://example.com/emol/santiago-clima",
+    "summary": "Pronóstico para la jornada",
+    "publishedAt": "2014-02-26T06:45:00-03:00",
+    "portalId": "cl-emol",
+    "extractedLocations": [
+      { "name": "Santiago", "lat": -33.4489, "lon": -70.6693, "confidence": 0.85 }
+    ]
+  },
+  {
+    "id": "mx-eluniversal-1",
+    "title": "Reformas avanzan en Ciudad de México",
+    "link": "http://example.com/eluniversal/mx/reformas",
+    "summary": "Debate en el Congreso",
+    "publishedAt": "2014-02-26T09:10:00-06:00",
+    "portalId": "mx-eluniversal",
+    "extractedLocations": [
+      { "name": "Mexico City", "lat": 19.4326, "lon": -99.1332, "confidence": 0.85 }
+    ]
+  }
+]
