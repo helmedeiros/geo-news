@@ -23,7 +23,10 @@
     render: function () {
       var items = this.headlines.toJSON();
       if (items.length === 0) {
-        this.$el.html('<p class="empty">No headlines in this view yet.</p>');
+        this.$el.html(
+          '<p class="empty">No headlines in the current view. Try panning the ' +
+          'map or switching mode.</p>'
+        );
         return this;
       }
       var html = items.map(function (i) {
