@@ -1,0 +1,22 @@
+{
+  "browser": true,
+  "node": false,
+  "globalstrict": true,
+  "curly": true,
+  "eqeqeq": true,
+  "undef": true,
+  "indent": 2,
+  "quotmark": "single",
+  "laxbreak": true,
+  "predef": [
+    "Backbone",
+    "L",
+    "$",
+    "_",
+    "GeoNewsMapView",
+    "GeoNewsModeToggleView",
+    "GeoNewsHeadlineListView",
+    "GeoNewsHeadlines",
+    "GeoNewsAppController"
+  ]
+}
