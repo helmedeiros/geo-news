@@ -32,10 +32,14 @@
 
     renderItems: function (items) {
       this.markers.clearLayers();
+      var mode = this.regionQuery.get('mode');
+      var color = mode === 'event' ? '#c0392b' : '#2c7be5';
       items.forEach(function (item) {
         var p = item.markerPoint;
         if (!p) { return; }
-        L.marker([p.lat, p.lon]).bindPopup(
+        L.circleMarker([p.lat, p.lon], {
+          radius: 7, color: color, weight: 2, fillOpacity: 0.6
+        }).bindPopup(
           '<b>' + item.title + '</b><br><small>' + item.portalId + '</small>'
         ).addTo(this.markers);
       }, this);
