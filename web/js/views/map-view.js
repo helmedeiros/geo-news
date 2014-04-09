@@ -17,7 +17,13 @@
       }).addTo(this.map);
       this.markers = L.layerGroup().addTo(this.map);
       this.map.on('moveend', this.publishBounds.bind(this));
+      this.regionQuery.on('change:mode', this.refresh.bind(this));
+      this.lastItems = [];
       this.publishBounds();
+    },
+
+    refresh: function () {
+      this.renderItems(this.lastItems);
     },
 
     publishBounds: function () {
@@ -31,6 +37,7 @@
     },
 
     renderItems: function (items) {
+      this.lastItems = items;
       this.markers.clearLayers();
       var mode = this.regionQuery.get('mode');
       var color = mode === 'event' ? '#c0392b' : '#2c7be5';
