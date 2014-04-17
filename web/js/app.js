@@ -1,5 +1,6 @@
 /* global $, Backbone, GeoNewsMapView, GeoNewsModeToggleView,
-          GeoNewsHeadlineListView, GeoNewsHeadlines, GeoNewsAppController */
+          GeoNewsHeadlineListView, GeoNewsHeadlines, GeoNewsAppController,
+          GeoNewsRegionPresetsView */
 'use strict';
 
 (function () {
@@ -17,6 +18,7 @@
   var mapView = new GeoNewsMapView({ regionQuery: regionQuery });
   new GeoNewsModeToggleView({ regionQuery: regionQuery });
   new GeoNewsHeadlineListView({ headlines: headlines });
+  new GeoNewsRegionPresetsView({ map: mapView.map });
 
   $.when(
     $.getJSON('data/headlines.sample.json'),
