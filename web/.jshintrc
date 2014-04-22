@@ -18,6 +18,7 @@
     "GeoNewsHeadlineListView",
     "GeoNewsHeadlines",
     "GeoNewsAppController",
-    "GeoNewsRegionPresetsView"
+    "GeoNewsRegionPresetsView",
+    "GeoNewsUrlState"
   ]
 }
