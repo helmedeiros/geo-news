@@ -96,3 +96,14 @@ html, body {
 .leaflet-popup-content small {
   color: #555;
 }
+
+.app-headlines .loading {
+  color: #888;
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .app-main { flex-direction: column; }
+  .app-headlines { width: auto; max-height: 40vh; border-left: 0; border-top: 1px solid #ddd; }
+  .region-presets { display: none; }
+}
