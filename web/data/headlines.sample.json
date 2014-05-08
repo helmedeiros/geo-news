@@ -53,5 +53,49 @@
     "extractedLocations": [
       { "name": "Mexico City", "lat": 19.4326, "lon": -99.1332, "confidence": 0.85 }
     ]
+  },
+  {
+    "id": "co-eltiempo-1",
+    "title": "Bogotá refuerza transporte público",
+    "link": "http://example.com/eltiempo/bogota-transporte",
+    "summary": "Plan piloto en TransMilenio",
+    "publishedAt": "2014-04-12T08:00:00-05:00",
+    "portalId": "co-eltiempo",
+    "extractedLocations": [
+      { "name": "Bogotá", "lat": 4.711, "lon": -74.0721, "confidence": 0.9 }
+    ]
+  },
+  {
+    "id": "ca-globeandmail-1",
+    "title": "Toronto council approves new transit line",
+    "link": "http://example.com/globe/toronto-transit",
+    "summary": "Construction begins next spring",
+    "publishedAt": "2014-04-15T18:20:00-04:00",
+    "portalId": "ca-globeandmail",
+    "extractedLocations": [
+      { "name": "Toronto", "lat": 43.6532, "lon": -79.3832, "confidence": 0.95 }
+    ]
+  },
+  {
+    "id": "pe-elcomercio-1",
+    "title": "Lima debate reforma universitaria",
+    "link": "http://example.com/elcomercio/lima-reforma",
+    "summary": "Marchas en el centro",
+    "publishedAt": "2014-04-19T13:30:00-05:00",
+    "portalId": "pe-elcomercio",
+    "extractedLocations": [
+      { "name": "Lima", "lat": -12.0464, "lon": -77.0428, "confidence": 0.9 }
+    ]
+  },
+  {
+    "id": "us-washpost-1",
+    "title": "Senate debates climate package in Washington",
+    "link": "http://example.com/wapo/senate-climate",
+    "summary": "Bipartisan negotiations continue",
+    "publishedAt": "2014-04-23T15:45:00-04:00",
+    "portalId": "us-washpost",
+    "extractedLocations": [
+      { "name": "Washington", "lat": 38.9072, "lon": -77.0369, "confidence": 0.8 }
+    ]
   }
 ]
