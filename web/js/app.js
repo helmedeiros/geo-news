@@ -21,8 +21,20 @@
   new GeoNewsRegionPresetsView({ map: mapView.map });
   GeoNewsUrlState.bind(regionQuery, mapView.map);
 
+  function loadHeadlines() {
+    var d = $.Deferred();
+    $.getJSON('data/headlines.json')
+      .done(function (data) { d.resolve([data]); })
+      .fail(function () {
+        $.getJSON('data/headlines.sample.json')
+          .done(function (data) { d.resolve([data]); })
+          .fail(d.reject);
+      });
+    return d.promise();
+  }
+
   $.when(
-    $.getJSON('data/headlines.sample.json'),
+    loadHeadlines(),
     $.getJSON('data/portals.sample.json')
   ).done(function (headlinesResult, portalsResult) {
     new GeoNewsAppController({
