@@ -16,9 +16,11 @@
     "node": ">= 0.6"
   },
   "scripts": {
-    "lint": "jshint lib test",
+    "lint": "jshint lib test scripts && jshint --config web/.jshintrc web/js",
     "test": "mocha --reporter spec --recursive test",
-    "check": "npm run lint && npm test"
+    "check": "npm run lint && npm test",
+    "build:dataset": "node scripts/build-headlines-dataset.js",
+    "deploy:pages": "bash scripts/deploy-pages.sh"
   },
   "devDependencies": {
     "mocha": "~1.2.0",
