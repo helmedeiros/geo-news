@@ -2,7 +2,7 @@
 
 All notable changes to `geo-news` are recorded here.
 
-## [Unreleased]
+## [1.0.0] — 2014-07-01
 
 ### Added
 - Domain layer: `NewsItem`, `Portal`, `Coordinate`, `BoundingBox`, `Region`,

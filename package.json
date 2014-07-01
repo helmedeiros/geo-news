@@ -1,6 +1,6 @@
 {
   "name": "geo-news",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Geolocalised news for the Americas.",
   "main": "lib/index.js",
   "keywords": [
