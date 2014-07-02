@@ -62,6 +62,28 @@ describe('NewsItem.withLocations', function () {
   });
 });
 
+describe('NewsItem.mutableCopy', function () {
+  it('returns an unfrozen shallow copy that accepts new fields', function () {
+    var item = newsItem.create(sample());
+    var copy = newsItem.mutableCopy(item);
+    expect(Object.isFrozen(copy)).to.equal(false);
+    copy.image = 'http://example.com/cover.jpg';
+    copy.preview = 'lead paragraph';
+    expect(copy.image).to.equal('http://example.com/cover.jpg');
+    expect(copy.id).to.equal(item.id);
+  });
+
+  it('copies the extractedLocations array so the original stays untouched', function () {
+    var item = newsItem.withLocations(newsItem.create(sample()), [
+      { name: 'Lima', lat: -12, lon: -77 }
+    ]);
+    var copy = newsItem.mutableCopy(item);
+    copy.extractedLocations.push({ name: 'Quito', lat: -0.2, lon: -78.5 });
+    expect(item.extractedLocations).to.have.length(1);
+    expect(copy.extractedLocations).to.have.length(2);
+  });
+});
+
 describe('NewsItem.byPublishedAtDesc', function () {
   it('sorts newer items before older ones', function () {
     var older = newsItem.create(sample({

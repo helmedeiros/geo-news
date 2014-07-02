@@ -22,6 +22,7 @@ var nodeHttpClient = require('../lib/src/adapters/node-http-client');
 var gazetteerExtractor = require('../lib/src/adapters/gazetteer-extractor');
 var ogExtractor = require('../lib/src/adapters/og-extractor');
 var gazetteer = require('../lib/src/registry/gazetteer');
+var newsItem = require('../lib/src/domain/news-item');
 
 var TARGET = path.join(__dirname, '..', 'web', 'data', 'headlines.json');
 var OG_LIMIT = 400;
@@ -88,9 +89,10 @@ wired.indexAll.execute(function (err, summary) {
       console.error('findAll failed:', findErr);
       process.exit(1);
     }
-    // Domain NewsItems are frozen; copy them out so OG enrichment can write
-    // back image and preview fields.
-    var items = JSON.parse(JSON.stringify(frozenItems));
+    // Domain NewsItems are frozen; convert to mutable copies so OG
+    // enrichment can attach image and preview fields without silently
+    // throwing inside an async callback.
+    var items = frozenItems.map(newsItem.mutableCopy);
     console.log('indexed', items.length, 'items;',
       summary.failures.length, 'portal failures');
     console.log('fetching OG metadata for the newest', OG_LIMIT, 'items…');
