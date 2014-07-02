@@ -15,8 +15,11 @@ application. A reference map UI is provided under `web/`.
 
 ## Install
 
+`geo-news` is not yet on the npm registry. Clone it from GitHub:
+
 ```
-npm install geo-news
+git clone https://github.com/helmedeiros/geo-news.git
+cd geo-news && npm install
 ```
 
 ## Usage
@@ -75,10 +78,38 @@ Embedders can override the registry by passing their own
   `gazetteerExtractor` (offline, Americas-cities) and `compositeExtractor`
   which chains it with a `GeocoderPort` fallback.
 
-## Status
+## Status & known limitations
 
-Pre-1.0. The library — domain, ports, RSS adapter, portal registry and
-location extraction — is in. The map UI lands next.
+This is a working demo, not a production-supported product. Things to know
+before relying on it:
+
+- **Google News dependency**: 16 of the 64 bundled "portals" are Google News
+  country aggregator RSS feeds. Google's terms of service forbid automated
+  programmatic access; they can revoke without warning and ~half the live
+  dataset would evaporate. The remaining ~48 entries are individual outlets
+  (Clarín, Folha, NYT, Le Monde, …) and some of those work directly.
+- **OG thumbnails are hot-linked** to publisher CDNs by default. Several
+  publishers serve `403` to off-origin image requests; expect a slowly
+  growing percentage of broken thumbnails over time. Use
+  `scripts/cache-og-images.js` (see below) to bake them into the deploy.
+- **Click-to-preview** never re-renders article body text. It only shows
+  publisher-supplied snippet metadata (RSS `<description>`, `og:description`,
+  `og:image`) plus a "Read on {source} →" link back to the publisher. No
+  iframe, no scraping.
+- **Manual deploys**: the live demo is refreshed by running
+  `npm run deploy:pages` from a workstation. A GitHub Actions cron (see
+  `.github/workflows/deploy.yml`) re-runs the deploy every 6 hours and
+  fails its own run if the deployed page renders zero headlines.
+- **Publisher-mode markers for Google News** sit at country capitals, since
+  there is no single physical address for "Google News (Argentina)". As the
+  GN share of the data grows, the publisher view gets less spatially
+  informative; switch to event mode for an honest map.
+- **Bundled gazetteer is 32 cities** — event mode misses any place outside
+  that list. Pass a richer gazetteer to `gazetteerExtractor.create({…})`
+  if you need wider coverage.
+- **Snippet-licensing regimes** (EU Article 15, Canada C-18, Brazil
+  PL 2630) apply to large platforms. Below their thresholds this demo is
+  fine; if you re-host it commercially, check your jurisdiction.
 
 ## Acknowledgements
 
