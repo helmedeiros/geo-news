@@ -22,6 +22,11 @@ node scripts/sync-web-portals.js
 echo "deploy-pages: building live dataset (continuing on failure)"
 node scripts/build-headlines-dataset.js || true
 
+if [ -f web/data/headlines.json ]; then
+  echo "deploy-pages: caching OG images locally (continuing on failure)"
+  node scripts/cache-og-images.js || true
+fi
+
 DEPLOY_DIR=$(mktemp -d -t geo-news-pages.XXXXXX)
 trap 'rm -rf "$DEPLOY_DIR"' EXIT
 
