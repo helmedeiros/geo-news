@@ -43,3 +43,9 @@ git remote add origin "$(cd "$REPO_ROOT" && git remote get-url origin)"
 git push -f -q origin gh-pages
 
 echo "deploy-pages: pushed gh-pages"
+
+cd "$REPO_ROOT"
+if [ -x scripts/verify-live.sh ]; then
+  echo "deploy-pages: verifying live page renders headlines…"
+  scripts/verify-live.sh
+fi
