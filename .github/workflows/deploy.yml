@@ -1,0 +1,70 @@
+name: deploy
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  push:
+    branches: [master]
+    paths:
+      - 'web/**'
+      - 'lib/**'
+      - 'scripts/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: install tooling
+        run: npm install mocha@^10 chai@^4 jshint@^0.7 --no-save
+
+      - name: lint
+        run: |
+          ./node_modules/.bin/jshint lib test scripts examples
+          ./node_modules/.bin/jshint --config web/.jshintrc web/js
+
+      - name: test
+        run: ./node_modules/mocha/bin/_mocha --reporter min --recursive test
+
+      - name: sync web portal lookup
+        run: node scripts/sync-web-portals.js
+
+      - name: build live dataset
+        run: node scripts/build-headlines-dataset.js
+        continue-on-error: true
+
+      - name: cache OG images
+        run: node scripts/cache-og-images.js
+        continue-on-error: true
+
+      - name: install chromium for verify gate
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
+
+      - name: publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./web
+          force_orphan: true
+          commit_message: "deploy: publish geo-news UI"
+
+      - name: verify live page renders headlines
+        env:
+          CHROME_BIN: /usr/bin/chromium-browser
+        run: scripts/verify-live.sh https://helmedeiros.github.io/geo-news/
