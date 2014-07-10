@@ -8,8 +8,8 @@
 set -euo pipefail
 
 URL="${1:-https://helmedeiros.github.io/geo-news/}"
-MAX_TRIES=12
-SLEEP_S=5
+MAX_TRIES=18
+SLEEP_S=7
 
 find_chrome() {
   if [ "${CHROME_BIN:-}" != "" ] && [ -x "${CHROME_BIN}" ]; then
