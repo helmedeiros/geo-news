@@ -2,6 +2,36 @@
 
 All notable changes to `geo-news` are recorded here.
 
+## [1.4.0] — 2014-07-11
+
+### Added — operational hardening before a pause
+
+- `BinaryHttpClient` adapter with redirect-following and a size cap, used by
+  the new `scripts/cache-og-images.js` pass that downloads each item's OG
+  thumbnail into `web/data/og/{hash}.{ext}` and rewrites `item.image` to a
+  local path. Stops hot-linking publisher CDNs.
+- `scripts/verify-live.sh` headless-Chrome smoke test that pulls the live
+  page, retries up to 2 minutes for Pages publication, and fails if zero
+  `class="headline"` rows render. Wired in as the deploy script's final
+  gate.
+- `.github/workflows/deploy.yml` — GitHub Actions cron (every 6h) that
+  runs lint + tests + dataset build + image cache + Pages publish, and
+  invokes `verify-live.sh` as its own gate. Removes the manual-deploy
+  staleness risk and turns silent breakage into a failed workflow run.
+- `newsItem.mutableCopy(item)` — explicit unfreeze for consumers (notably
+  the dataset build) that need to attach derived fields. Closes the
+  silent-throw-in-async-callback footgun the OG enrichment hit in v1.3.0.
+
+### Changed
+
+- `NodeHttpClient` migrated from deprecated `url.parse` to the WHATWG
+  `URL` API. Same external behaviour, no more Node deprecation warning.
+- README rewritten with an honest "Status & known limitations" section
+  covering Google News ToS exposure, OG hot-linking, snippet-licensing
+  regimes (EU Article 15 / C-18 / PL 2630), publisher-mode lumping
+  Google News portals at country capitals, the small (32-city) bundled
+  gazetteer, and a correction that the package is not yet on npm.
+
 ## [1.3.0] — 2014-07-30
 
 ### Added
