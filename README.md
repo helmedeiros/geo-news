@@ -13,20 +13,37 @@ the top portals across North and South America, with two location modes:
 The library is framework-agnostic and embeddable in any Node.js or browser
 application. A reference map UI is provided under `web/`.
 
+## Install
+
+```
+npm install geo-news
+```
+
 ## Usage
 
 ```js
-var geo = require('geo-news').wire({
-  feed: myRssAdapter,
-  portals: myPortalRegistry
+var geoNews = require('geo-news');
+var rssAdapter = geoNews.adapters.rssAdapter;
+var rssParser = geoNews.adapters.rssParser;
+var nodeHttp  = geoNews.adapters.nodeHttpClient;
+var extractor = geoNews.adapters.gazetteerExtractor;
+var gazetteer = geoNews.registry.gazetteer;
+
+var wired = geoNews.wire({
+  feed: rssAdapter.create({
+    httpClient: nodeHttp.create({ timeoutMs: 8000 }),
+    parser: rssParser
+  }),
+  extractor: extractor.create({ gazetteer: gazetteer }),
+  concurrency: 4
 });
 
-geo.indexNews.execute(somePortal, function (err) {
+wired.indexAll.execute(function (err, summary) {
   if (err) { throw err; }
-  geo.queryByRegion.execute(
-    { mode: 'publisher', bbox: southAmericaBbox },
-    function (err, items) {
-      items.forEach(function (i) { console.log(i.title); });
+  wired.queryByRegion.execute(
+    { mode: 'event', bbox: wired.regions.SOUTH_AMERICA.bbox },
+    function (qErr, items) {
+      items.forEach(function (i) { console.log('[' + i.portalId + '] ' + i.title); });
     }
   );
 });
