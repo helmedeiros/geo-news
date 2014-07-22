@@ -80,6 +80,15 @@ Embedders can override the registry by passing their own
 Pre-1.0. The library — domain, ports, RSS adapter, portal registry and
 location extraction — is in. The map UI lands next.
 
+## Acknowledgements
+
+- Map tiles by [OpenStreetMap](https://www.openstreetmap.org) contributors,
+  served via the OSM tile servers (please be polite).
+- Map rendering by [Leaflet](https://leafletjs.com).
+- City list derived from [GeoNames](https://www.geonames.org) (CC-BY 4.0).
+- UI built with [Backbone.js](https://backbonejs.org),
+  [Underscore](https://underscorejs.org) and [jQuery](https://jquery.com).
+
 ## License
 
 MIT — see `LICENSE`.
