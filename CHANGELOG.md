@@ -2,6 +2,14 @@
 
 All notable changes to `geo-news` are recorded here.
 
+## [1.2.0] — 2014-07-25
+
+### Added
+- Map markers are clustered via leaflet.markercluster — the 1000+-item
+  default view stays readable instead of piling up at each city centre.
+- Sidebar gains a date-range filter (last hour / 24h / week / month /
+  anytime) and a "Showing N of M" count under the toolbar.
+
 ## [1.1.0] — 2014-07-28
 
 ### Added
