@@ -16,7 +16,10 @@
         attribution: '© OpenStreetMap contributors',
         maxZoom: 12
       }).addTo(this.map);
-      this.markers = L.layerGroup().addTo(this.map);
+      this.markers = (typeof L.markerClusterGroup === 'function')
+        ? L.markerClusterGroup({ maxClusterRadius: 45, showCoverageOnHover: false })
+        : L.layerGroup();
+      this.markers.addTo(this.map);
       this.map.on('moveend', this.publishBounds.bind(this));
       this.regionQuery.on('change:mode', this.refresh.bind(this));
       this.lastItems = [];
