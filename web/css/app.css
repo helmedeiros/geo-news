@@ -82,7 +82,7 @@ html, body {
 
 .app-filters {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 1fr;
   gap: 0.25rem;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #eee;
@@ -101,10 +101,18 @@ html, body {
   font: inherit;
   background: #fff;
   border: 1px solid #ccc;
+  min-width: 0;
 }
 
 .app-filters .filter-source {
   grid-column: 1 / -1;
+}
+
+.app-filters .filter-count {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+  color: #666;
+  padding-top: 0.15rem;
 }
 
 .app-headlines {

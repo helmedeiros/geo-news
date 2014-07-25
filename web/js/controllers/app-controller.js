@@ -6,14 +6,15 @@
     initialize: function (options) {
       this.regionQuery = options.regionQuery;
       this.filters = options.filters;
+      this.filtersView = options.filtersView;
       this.headlines = options.headlines;
       this.dataset = options.dataset;
       this.registry = options.registry;
       this.mapView = options.mapView;
       this.listenTo(this.regionQuery, 'change', this.run);
       if (this.filters) {
-        this.listenTo(this.filters, 'change:sort change:source change:query',
-                      this.run);
+        this.listenTo(this.filters,
+          'change:sort change:source change:query change:since', this.run);
       }
       this.run();
     },
@@ -22,6 +23,7 @@
       var matches = this.headlines.queryFor(
         this.dataset, this.regionQuery.attributes, this.registry
       );
+      var total = matches.length;
       if (this.filters) {
         this.filters.setSources(matches, this.registry);
         matches = this.filters.apply(matches, this.registry);
@@ -30,6 +32,9 @@
           return new Date(b.publishedAt).getTime() -
                  new Date(a.publishedAt).getTime();
         });
+      }
+      if (this.filtersView) {
+        this.filtersView.setCount(matches.length, total);
       }
       this.headlines.reset(matches);
       this.mapView.renderItems(matches);

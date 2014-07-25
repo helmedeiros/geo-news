@@ -8,16 +8,32 @@
       sort: 'newest',
       source: '',
       query: '',
+      since: 'all',
       availableSources: []
+    },
+
+    cutoffMs: function () {
+      var since = this.get('since');
+      if (since === 'hour')  { return 60 * 60 * 1000; }
+      if (since === 'today') { return 24 * 60 * 60 * 1000; }
+      if (since === 'week')  { return 7 * 24 * 60 * 60 * 1000; }
+      if (since === 'month') { return 30 * 24 * 60 * 60 * 1000; }
+      return null;
     },
 
     apply: function (items, registry) {
       var sort = this.get('sort');
       var source = this.get('source');
       var query = (this.get('query') || '').trim().toLowerCase();
+      var cutoff = this.cutoffMs();
+      var now = Date.now();
 
       var filtered = items.filter(function (i) {
         if (source && i.portalId !== source) { return false; }
+        if (cutoff !== null) {
+          var ms = new Date(i.publishedAt).getTime();
+          if (isNaN(ms) || now - ms > cutoff) { return false; }
+        }
         if (query) {
           var hay = ((i.title || '') + ' ' + (i.summary || '')).toLowerCase();
           if (hay.indexOf(query) === -1) { return false; }

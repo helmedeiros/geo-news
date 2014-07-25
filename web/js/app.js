@@ -23,7 +23,7 @@
     headlines: headlines,
     mapView: mapView
   });
-  new GeoNewsHeadlineFiltersView({ filters: filters });
+  var filtersView = new GeoNewsHeadlineFiltersView({ filters: filters });
   new GeoNewsRegionPresetsView({ map: mapView.map });
   GeoNewsUrlState.bind(regionQuery, mapView.map);
 
@@ -58,6 +58,7 @@
     new GeoNewsAppController({
       regionQuery: regionQuery,
       filters: filters,
+      filtersView: filtersView,
       headlines: headlines,
       dataset: headlinesResult[0],
       registry: portalsResult[0],
