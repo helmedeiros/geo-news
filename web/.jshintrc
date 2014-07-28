@@ -19,6 +19,8 @@
     "GeoNewsHeadlines",
     "GeoNewsAppController",
     "GeoNewsRegionPresetsView",
-    "GeoNewsUrlState"
+    "GeoNewsUrlState",
+    "GeoNewsHeadlineFilters",
+    "GeoNewsHeadlineFiltersView"
   ]
 }
