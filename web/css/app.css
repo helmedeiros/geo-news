@@ -72,12 +72,45 @@ html, body {
   flex: 1 1 auto;
 }
 
-.app-headlines {
+.app-sidebar {
   width: 360px;
   border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.app-filters {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+  background: #fafaf7;
+}
+
+.app-filters .filter-query {
+  grid-column: 1 / -1;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+.app-filters select {
+  padding: 0.3rem 0.4rem;
+  font: inherit;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.app-filters .filter-source {
+  grid-column: 1 / -1;
+}
+
+.app-headlines {
+  flex: 1 1 auto;
   overflow-y: auto;
   padding: 0.5rem 1rem;
-  background: #fff;
 }
 
 .app-headlines .headline {
@@ -117,6 +150,6 @@ html, body {
 
 @media (max-width: 720px) {
   .app-main { flex-direction: column; }
-  .app-headlines { width: auto; max-height: 40vh; border-left: 0; border-top: 1px solid #ddd; }
+  .app-sidebar { width: auto; max-height: 45vh; border-left: 0; border-top: 1px solid #ddd; }
   .region-presets { display: none; }
 }
