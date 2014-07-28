@@ -2,6 +2,21 @@
 
 All notable changes to `geo-news` are recorded here.
 
+## [1.1.0] — 2014-07-28
+
+### Added
+- `lib/src/registry/google-news-portals.json` — one Google News country-RSS
+  aggregator per Americas country, merged into `fromBundled()`. Lights up
+  every country on the map with ~30+ fresh items each.
+- Sidebar gains the standard newsroom toolbar: search input, sort dropdown
+  (newest / oldest / source A→Z), source filter dropdown rebuilt from
+  whatever is in the current map view.
+- Sidebar click pans and zooms the map to that headline's marker.
+
+### Fixed
+- `NodeHttpClient` now follows up to 5 redirects, so providers that 302
+  (Google News, several Latin American outlets) actually return their body.
+
 ## [1.0.2] — 2014-07-31
 
 ### Fixed
