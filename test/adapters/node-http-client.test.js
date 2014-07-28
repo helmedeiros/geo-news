@@ -14,6 +14,14 @@ describe('NodeHttpClient', function () {
         res.writeHead(200, { 'content-type': 'application/xml' });
         return res.end('<rss>hi</rss>');
       }
+      if (req.url === '/redirect') {
+        res.writeHead(302, { 'location': '/ok' });
+        return res.end();
+      }
+      if (req.url === '/loop') {
+        res.writeHead(302, { 'location': '/loop' });
+        return res.end();
+      }
       res.writeHead(404);
       res.end('nope');
     });
@@ -38,6 +46,23 @@ describe('NodeHttpClient', function () {
     var client = nodeHttpClient.create();
     client.get('http://127.0.0.1:' + port + '/missing', function (err) {
       expect(err.message).to.match(/HTTP 404/);
+      done();
+    });
+  });
+
+  it('follows a 302 redirect and returns the final body', function (done) {
+    var client = nodeHttpClient.create();
+    client.get('http://127.0.0.1:' + port + '/redirect', function (err, body) {
+      expect(err).to.equal(null);
+      expect(body).to.equal('<rss>hi</rss>');
+      done();
+    });
+  });
+
+  it('stops when the redirect chain exceeds maxRedirects', function (done) {
+    var client = nodeHttpClient.create({ maxRedirects: 2 });
+    client.get('http://127.0.0.1:' + port + '/loop', function (err) {
+      expect(err.message).to.match(/too many redirects/);
       done();
     });
   });
