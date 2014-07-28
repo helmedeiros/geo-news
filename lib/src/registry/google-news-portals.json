@@ -1,0 +1,82 @@
+{
+  "US": [{
+    "id": "gn-us", "name": "Google News (US)",
+    "city": "Washington", "lat": 38.9072, "lon": -77.0369,
+    "rss": "https://news.google.com/rss?hl=en&gl=US&ceid=US:en"
+  }],
+  "CA": [{
+    "id": "gn-ca", "name": "Google News (Canada)",
+    "city": "Ottawa", "lat": 45.4215, "lon": -75.6972,
+    "rss": "https://news.google.com/rss?hl=en&gl=CA&ceid=CA:en"
+  }],
+  "MX": [{
+    "id": "gn-mx", "name": "Google News (México)",
+    "city": "Mexico City", "lat": 19.4326, "lon": -99.1332,
+    "rss": "https://news.google.com/rss?hl=es&gl=MX&ceid=MX:es"
+  }],
+  "AR": [{
+    "id": "gn-ar", "name": "Google News (Argentina)",
+    "city": "Buenos Aires", "lat": -34.6037, "lon": -58.3816,
+    "rss": "https://news.google.com/rss?hl=es&gl=AR&ceid=AR:es-419"
+  }],
+  "BR": [{
+    "id": "gn-br", "name": "Google News (Brasil)",
+    "city": "Brasília", "lat": -15.8267, "lon": -47.9218,
+    "rss": "https://news.google.com/rss?hl=pt-BR&gl=BR&ceid=BR:pt-419"
+  }],
+  "CL": [{
+    "id": "gn-cl", "name": "Google News (Chile)",
+    "city": "Santiago", "lat": -33.4489, "lon": -70.6693,
+    "rss": "https://news.google.com/rss?hl=es&gl=CL&ceid=CL:es-419"
+  }],
+  "CO": [{
+    "id": "gn-co", "name": "Google News (Colombia)",
+    "city": "Bogotá", "lat": 4.711, "lon": -74.0721,
+    "rss": "https://news.google.com/rss?hl=es&gl=CO&ceid=CO:es-419"
+  }],
+  "PE": [{
+    "id": "gn-pe", "name": "Google News (Perú)",
+    "city": "Lima", "lat": -12.0464, "lon": -77.0428,
+    "rss": "https://news.google.com/rss?hl=es&gl=PE&ceid=PE:es-419"
+  }],
+  "VE": [{
+    "id": "gn-ve", "name": "Google News (Venezuela)",
+    "city": "Caracas", "lat": 10.4806, "lon": -66.9036,
+    "rss": "https://news.google.com/rss?hl=es&gl=VE&ceid=VE:es-419"
+  }],
+  "EC": [{
+    "id": "gn-ec", "name": "Google News (Ecuador)",
+    "city": "Quito", "lat": -0.1807, "lon": -78.4678,
+    "rss": "https://news.google.com/rss?hl=es&gl=EC&ceid=EC:es-419"
+  }],
+  "BO": [{
+    "id": "gn-bo", "name": "Google News (Bolivia)",
+    "city": "La Paz", "lat": -16.4897, "lon": -68.1193,
+    "rss": "https://news.google.com/rss?hl=es&gl=BO&ceid=BO:es-419"
+  }],
+  "PY": [{
+    "id": "gn-py", "name": "Google News (Paraguay)",
+    "city": "Asunción", "lat": -25.2637, "lon": -57.5759,
+    "rss": "https://news.google.com/rss?hl=es&gl=PY&ceid=PY:es-419"
+  }],
+  "UY": [{
+    "id": "gn-uy", "name": "Google News (Uruguay)",
+    "city": "Montevideo", "lat": -34.9011, "lon": -56.1645,
+    "rss": "https://news.google.com/rss?hl=es&gl=UY&ceid=UY:es-419"
+  }],
+  "GY": [{
+    "id": "gn-gy", "name": "Google News (Guyana)",
+    "city": "Georgetown", "lat": 6.8013, "lon": -58.1551,
+    "rss": "https://news.google.com/rss?hl=en&gl=GY&ceid=GY:en"
+  }],
+  "SR": [{
+    "id": "gn-sr", "name": "Google News (Suriname)",
+    "city": "Paramaribo", "lat": 5.852, "lon": -55.2038,
+    "rss": "https://news.google.com/rss?hl=nl&gl=SR&ceid=SR:nl"
+  }],
+  "GF": [{
+    "id": "gn-gf", "name": "Google News (Guyane)",
+    "city": "Cayenne", "lat": 4.9224, "lon": -52.3135,
+    "rss": "https://news.google.com/rss?hl=fr&gl=GF&ceid=GF:fr"
+  }]
+}

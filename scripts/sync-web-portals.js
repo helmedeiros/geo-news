@@ -13,19 +13,24 @@
 var fs = require('fs');
 var path = require('path');
 
-var SOURCE = require('../lib/src/registry/portals.json');
+var SOURCES = [
+  require('../lib/src/registry/portals.json'),
+  require('../lib/src/registry/google-news-portals.json')
+];
 var TARGET = path.join(__dirname, '..', 'web', 'data', 'portals.sample.json');
 
 var out = {};
-Object.keys(SOURCE).forEach(function (country) {
-  SOURCE[country].forEach(function (rec) {
-    out[rec.id] = {
-      lat: rec.lat,
-      lon: rec.lon,
-      name: rec.name,
-      country: country,
-      city: rec.city
-    };
+SOURCES.forEach(function (doc) {
+  Object.keys(doc).forEach(function (country) {
+    doc[country].forEach(function (rec) {
+      out[rec.id] = {
+        lat: rec.lat,
+        lon: rec.lon,
+        name: rec.name,
+        country: country,
+        city: rec.city
+      };
+    });
   });
 });
 

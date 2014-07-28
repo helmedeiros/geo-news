@@ -334,5 +334,117 @@
     "name": "Guyaweb",
     "country": "GF",
     "city": "Cayenne"
+  },
+  "gn-us": {
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "name": "Google News (US)",
+    "country": "US",
+    "city": "Washington"
+  },
+  "gn-ca": {
+    "lat": 45.4215,
+    "lon": -75.6972,
+    "name": "Google News (Canada)",
+    "country": "CA",
+    "city": "Ottawa"
+  },
+  "gn-mx": {
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "name": "Google News (México)",
+    "country": "MX",
+    "city": "Mexico City"
+  },
+  "gn-ar": {
+    "lat": -34.6037,
+    "lon": -58.3816,
+    "name": "Google News (Argentina)",
+    "country": "AR",
+    "city": "Buenos Aires"
+  },
+  "gn-br": {
+    "lat": -15.8267,
+    "lon": -47.9218,
+    "name": "Google News (Brasil)",
+    "country": "BR",
+    "city": "Brasília"
+  },
+  "gn-cl": {
+    "lat": -33.4489,
+    "lon": -70.6693,
+    "name": "Google News (Chile)",
+    "country": "CL",
+    "city": "Santiago"
+  },
+  "gn-co": {
+    "lat": 4.711,
+    "lon": -74.0721,
+    "name": "Google News (Colombia)",
+    "country": "CO",
+    "city": "Bogotá"
+  },
+  "gn-pe": {
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "name": "Google News (Perú)",
+    "country": "PE",
+    "city": "Lima"
+  },
+  "gn-ve": {
+    "lat": 10.4806,
+    "lon": -66.9036,
+    "name": "Google News (Venezuela)",
+    "country": "VE",
+    "city": "Caracas"
+  },
+  "gn-ec": {
+    "lat": -0.1807,
+    "lon": -78.4678,
+    "name": "Google News (Ecuador)",
+    "country": "EC",
+    "city": "Quito"
+  },
+  "gn-bo": {
+    "lat": -16.4897,
+    "lon": -68.1193,
+    "name": "Google News (Bolivia)",
+    "country": "BO",
+    "city": "La Paz"
+  },
+  "gn-py": {
+    "lat": -25.2637,
+    "lon": -57.5759,
+    "name": "Google News (Paraguay)",
+    "country": "PY",
+    "city": "Asunción"
+  },
+  "gn-uy": {
+    "lat": -34.9011,
+    "lon": -56.1645,
+    "name": "Google News (Uruguay)",
+    "country": "UY",
+    "city": "Montevideo"
+  },
+  "gn-gy": {
+    "lat": 6.8013,
+    "lon": -58.1551,
+    "name": "Google News (Guyana)",
+    "country": "GY",
+    "city": "Georgetown"
+  },
+  "gn-sr": {
+    "lat": 5.852,
+    "lon": -55.2038,
+    "name": "Google News (Suriname)",
+    "country": "SR",
+    "city": "Paramaribo"
+  },
+  "gn-gf": {
+    "lat": 4.9224,
+    "lon": -52.3135,
+    "name": "Google News (Guyane)",
+    "country": "GF",
+    "city": "Cayenne"
   }
 }
