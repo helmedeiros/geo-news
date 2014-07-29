@@ -37,6 +37,7 @@
     loadHeadlines(),
     $.getJSON('data/portals.sample.json')
   ).done(function (headlinesResult, portalsResult) {
+    mapView.setRegistry(portalsResult[0]);
     new GeoNewsAppController({
       regionQuery: regionQuery,
       headlines: headlines,

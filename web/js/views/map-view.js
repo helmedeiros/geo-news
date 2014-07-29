@@ -10,6 +10,7 @@
 
     initialize: function (options) {
       this.regionQuery = options.regionQuery;
+      this.registry = options.registry || {};
       this.map = L.map(this.el).setView(AMERICAS_CENTER, AMERICAS_ZOOM);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
@@ -20,6 +21,10 @@
       this.regionQuery.on('change:mode', this.refresh.bind(this));
       this.lastItems = [];
       this.publishBounds();
+    },
+
+    setRegistry: function (registry) {
+      this.registry = registry || {};
     },
 
     refresh: function () {
@@ -44,10 +49,12 @@
       items.forEach(function (item) {
         var p = item.markerPoint;
         if (!p) { return; }
+        var portalEntry = this.registry[item.portalId];
+        var portalLabel = portalEntry ? portalEntry.name : item.portalId;
         L.circleMarker([p.lat, p.lon], {
           radius: 7, color: color, weight: 2, fillOpacity: 0.6
         }).bindPopup(
-          '<b>' + item.title + '</b><br><small>' + item.portalId + '</small>'
+          '<b>' + item.title + '</b><br><small>' + portalLabel + '</small>'
         ).addTo(this.markers);
       }, this);
     }
