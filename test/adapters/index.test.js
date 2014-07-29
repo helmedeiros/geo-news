@@ -16,5 +16,6 @@ describe('adapters index', function () {
     expect(adapters.gazetteerExtractor.create).to.be.a('function');
     expect(adapters.nominatimGeocoder.create).to.be.a('function');
     expect(adapters.compositeExtractor.create).to.be.a('function');
+    expect(adapters.ogExtractor.parse).to.be.a('function');
   });
 });
