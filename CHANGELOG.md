@@ -2,6 +2,23 @@
 
 All notable changes to `geo-news` are recorded here.
 
+## [1.3.0] — 2014-07-30
+
+### Added
+- `OgExtractor` adapter parses OpenGraph and standard `<head>` metadata from
+  an article URL (image, title, description).
+- Deploy script enriches the newest 400 items with OG image + description
+  so the UI can render a click-to-preview panel.
+- New `HeadlinePreviewView` opens a right-side panel on headline click with
+  the OG image, a clamped lead paragraph and a "Read on {source} →" CTA
+  that opens the publisher's page in a new tab. Stays inside publisher-
+  supplied snippet metadata — no full-article rendering, no iframe.
+
+### Fixed
+- Build script copies items out of their frozen domain shape before writing
+  OG fields; otherwise `item.image = …` threw inside the async callback
+  and silently dropped every successful enrichment.
+
 ## [1.2.0] — 2014-07-25
 
 ### Added
