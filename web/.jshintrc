@@ -21,6 +21,7 @@
     "GeoNewsRegionPresetsView",
     "GeoNewsUrlState",
     "GeoNewsHeadlineFilters",
-    "GeoNewsHeadlineFiltersView"
+    "GeoNewsHeadlineFiltersView",
+    "GeoNewsHeadlinePreviewView"
   ]
 }

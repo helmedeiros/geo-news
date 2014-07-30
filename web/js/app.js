@@ -1,7 +1,8 @@
 /* global $, Backbone, GeoNewsMapView, GeoNewsModeToggleView,
           GeoNewsHeadlineListView, GeoNewsHeadlines, GeoNewsAppController,
           GeoNewsRegionPresetsView, GeoNewsUrlState,
-          GeoNewsHeadlineFilters, GeoNewsHeadlineFiltersView */
+          GeoNewsHeadlineFilters, GeoNewsHeadlineFiltersView,
+          GeoNewsHeadlinePreviewView */
 'use strict';
 
 (function () {
@@ -19,9 +20,11 @@
   var headlines = new GeoNewsHeadlines();
   var mapView = new GeoNewsMapView({ regionQuery: regionQuery });
   new GeoNewsModeToggleView({ regionQuery: regionQuery });
+  var previewView = new GeoNewsHeadlinePreviewView({});
   var headlineListView = new GeoNewsHeadlineListView({
     headlines: headlines,
-    mapView: mapView
+    mapView: mapView,
+    previewView: previewView
   });
   var filtersView = new GeoNewsHeadlineFiltersView({ filters: filters });
   new GeoNewsRegionPresetsView({ map: mapView.map });
@@ -55,6 +58,7 @@
   ).done(function (headlinesResult, portalsResult) {
     mapView.setRegistry(portalsResult[0]);
     headlineListView.setRegistry(portalsResult[0]);
+    previewView.setRegistry(portalsResult[0]);
     new GeoNewsAppController({
       regionQuery: regionQuery,
       filters: filters,

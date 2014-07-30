@@ -10,7 +10,7 @@
   var TEMPLATE = _.template(
     '<div class="headline" data-index="<%- index %>" ' +
          'data-lat="<%- lat %>" data-lon="<%- lon %>">' +
-      '<a href="<%= link %>" target="_blank"><%- title %></a>' +
+      '<div class="title"><%- title %></div>' +
       '<div class="meta">' +
         '<%- portalLabel %> · <%- publishedAt %>' +
       '</div>' +
@@ -27,6 +27,7 @@
     initialize: function (options) {
       this.headlines = options.headlines;
       this.mapView = options.mapView;
+      this.previewView = options.previewView;
       this.registry = options.registry || {};
       this.listenTo(this.headlines, 'reset change', this.render);
       this.render();
@@ -38,6 +39,7 @@
 
     render: function () {
       var items = this.headlines.toJSON();
+      this.lastItems = items;
       if (items.length === 0) {
         this.$el.html(
           '<p class="empty">No headlines in the current view. Try panning the ' +
@@ -53,7 +55,6 @@
           index: index,
           lat: p.lat,
           lon: p.lon,
-          link: i.link,
           title: i.title,
           portalLabel: portalEntry ? portalEntry.name : i.portalId,
           publishedAt: formatDate(i.publishedAt)
@@ -64,13 +65,18 @@
     },
 
     onClick: function (e) {
-      if (!this.mapView) { return; }
-      if ($(e.target).is('a')) { return; }
       var $row = $(e.currentTarget);
-      var lat = parseFloat($row.attr('data-lat'));
-      var lon = parseFloat($row.attr('data-lon'));
-      if (isFinite(lat) && isFinite(lon)) {
-        this.mapView.focus(lat, lon);
+      var index = parseInt($row.attr('data-index'), 10);
+      var item = (this.lastItems || [])[index];
+      if (item && this.previewView) {
+        this.previewView.open(item);
+      }
+      if (this.mapView) {
+        var lat = parseFloat($row.attr('data-lat'));
+        var lon = parseFloat($row.attr('data-lon'));
+        if (isFinite(lat) && isFinite(lon)) {
+          this.mapView.focus(lat, lon);
+        }
       }
     }
   });
