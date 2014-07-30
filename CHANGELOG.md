@@ -2,6 +2,17 @@
 
 All notable changes to `geo-news` are recorded here.
 
+## [1.0.1] — 2014-07-30
+
+### Added
+- `examples/embed.js` proves third-party embed in under 50 LOC.
+- UI sorts the headline sidebar newest-first.
+- UI marker popups show the portal display name, not the slug.
+
+### Changed
+- Generated `web/data/headlines.json` is gitignored; deploy script writes
+  it fresh from the bundled portals.
+
 ## [1.0.0] — 2014-07-01
 
 ### Added
