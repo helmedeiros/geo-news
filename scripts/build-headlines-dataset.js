@@ -83,11 +83,14 @@ wired.indexAll.execute(function (err, summary) {
     console.error('indexAll failed:', err);
     process.exit(1);
   }
-  wired.repository.findAll(function (findErr, items) {
+  wired.repository.findAll(function (findErr, frozenItems) {
     if (findErr) {
       console.error('findAll failed:', findErr);
       process.exit(1);
     }
+    // Domain NewsItems are frozen; copy them out so OG enrichment can write
+    // back image and preview fields.
+    var items = JSON.parse(JSON.stringify(frozenItems));
     console.log('indexed', items.length, 'items;',
       summary.failures.length, 'portal failures');
     console.log('fetching OG metadata for the newest', OG_LIMIT, 'items…');
