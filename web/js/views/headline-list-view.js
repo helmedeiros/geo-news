@@ -2,6 +2,11 @@
 'use strict';
 
 (function () {
+  function formatDate(value) {
+    var d = new Date(value);
+    return d.getDate() + '.' + (d.getMonth() + 1) + '.' + d.getFullYear();
+  }
+
   var TEMPLATE = _.template(
     '<div class="headline" data-index="<%- index %>" ' +
          'data-lat="<%- lat %>" data-lon="<%- lon %>">' +
@@ -51,7 +56,7 @@
           link: i.link,
           title: i.title,
           portalLabel: portalEntry ? portalEntry.name : i.portalId,
-          publishedAt: new Date(i.publishedAt).toLocaleString()
+          publishedAt: formatDate(i.publishedAt)
         });
       }).join('');
       this.$el.html(html);
