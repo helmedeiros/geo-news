@@ -23,13 +23,23 @@
 
   function loadHeadlines() {
     var d = $.Deferred();
-    $.getJSON('data/headlines.json')
-      .done(function (data) { d.resolve([data]); })
-      .fail(function () {
-        $.getJSON('data/headlines.sample.json')
-          .done(function (data) { d.resolve([data]); })
-          .fail(d.reject);
-      });
+    var sample = $.getJSON('data/headlines.sample.json');
+    var live = $.getJSON('data/headlines.json');
+    $.when(sample.then(null, function () { return [[]]; }),
+           live.then(null, function () { return [[]]; }))
+      .done(function (sampleArgs, liveArgs) {
+        var sampleData = $.isArray(sampleArgs) ? sampleArgs[0] : sampleArgs;
+        var liveData = $.isArray(liveArgs) ? liveArgs[0] : liveArgs;
+        var byId = {};
+        (sampleData || []).forEach(function (i) { byId[i.id] = i; });
+        (liveData || []).forEach(function (i) { byId[i.id] = i; });
+        var merged = [];
+        for (var k in byId) {
+          if (byId.hasOwnProperty(k)) { merged.push(byId[k]); }
+        }
+        d.resolve([merged]);
+      })
+      .fail(function () { d.resolve([[]]); });
     return d.promise();
   }
 
