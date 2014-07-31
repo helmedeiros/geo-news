@@ -17,7 +17,10 @@
   var headlines = new GeoNewsHeadlines();
   var mapView = new GeoNewsMapView({ regionQuery: regionQuery });
   new GeoNewsModeToggleView({ regionQuery: regionQuery });
-  new GeoNewsHeadlineListView({ headlines: headlines });
+  var headlineListView = new GeoNewsHeadlineListView({
+    headlines: headlines,
+    mapView: mapView
+  });
   new GeoNewsRegionPresetsView({ map: mapView.map });
   GeoNewsUrlState.bind(regionQuery, mapView.map);
 
@@ -48,6 +51,7 @@
     $.getJSON('data/portals.sample.json')
   ).done(function (headlinesResult, portalsResult) {
     mapView.setRegistry(portalsResult[0]);
+    headlineListView.setRegistry(portalsResult[0]);
     new GeoNewsAppController({
       regionQuery: regionQuery,
       headlines: headlines,

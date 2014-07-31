@@ -83,6 +83,11 @@ html, body {
 .app-headlines .headline {
   border-bottom: 1px solid #eee;
   padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.app-headlines .headline:hover {
+  background: #fafaf7;
 }
 
 .app-headlines .headline a {

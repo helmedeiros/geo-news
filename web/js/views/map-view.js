@@ -27,6 +27,10 @@
       this.registry = registry || {};
     },
 
+    focus: function (lat, lon) {
+      this.map.setView([lat, lon], Math.max(this.map.getZoom(), 6));
+    },
+
     refresh: function () {
       this.renderItems(this.lastItems);
     },
