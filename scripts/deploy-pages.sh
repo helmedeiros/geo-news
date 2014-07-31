@@ -16,6 +16,9 @@ if [ -n "$(git status --porcelain)" ]; then
   exit 1
 fi
 
+echo "deploy-pages: syncing portal lookup from library registry"
+node scripts/sync-web-portals.js
+
 echo "deploy-pages: building live dataset (continuing on failure)"
 node scripts/build-headlines-dataset.js || true
 

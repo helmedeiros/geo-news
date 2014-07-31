@@ -2,6 +2,14 @@
 
 All notable changes to `geo-news` are recorded here.
 
+## [1.0.2] — 2014-07-31
+
+### Fixed
+- UI rendered no markers when the deploy fetched items from a portal absent
+  from the hand-rolled `portals.sample.json` subset. The web portal lookup
+  is now generated from the library's full registry via `sync-web-portals`,
+  and the deploy script runs it before publishing.
+
 ## [1.0.1] — 2014-07-30
 
 ### Added
