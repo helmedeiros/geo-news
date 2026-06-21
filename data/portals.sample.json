@@ -1,0 +1,450 @@
+{
+  "us-nyt": {
+    "lat": 40.7128,
+    "lon": -74.006,
+    "name": "The New York Times",
+    "country": "US",
+    "city": "New York"
+  },
+  "us-washpost": {
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "name": "The Washington Post",
+    "country": "US",
+    "city": "Washington"
+  },
+  "us-latimes": {
+    "lat": 34.0522,
+    "lon": -118.2437,
+    "name": "Los Angeles Times",
+    "country": "US",
+    "city": "Los Angeles"
+  },
+  "ca-globeandmail": {
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "name": "The Globe and Mail",
+    "country": "CA",
+    "city": "Toronto"
+  },
+  "ca-cbc": {
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "name": "CBC News",
+    "country": "CA",
+    "city": "Toronto"
+  },
+  "ca-nationalpost": {
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "name": "National Post",
+    "country": "CA",
+    "city": "Toronto"
+  },
+  "mx-eluniversal": {
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "name": "El Universal",
+    "country": "MX",
+    "city": "Mexico City"
+  },
+  "mx-reforma": {
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "name": "Reforma",
+    "country": "MX",
+    "city": "Mexico City"
+  },
+  "mx-milenio": {
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "name": "Milenio",
+    "country": "MX",
+    "city": "Mexico City"
+  },
+  "ar-clarin": {
+    "lat": -34.6037,
+    "lon": -58.3816,
+    "name": "Clarín",
+    "country": "AR",
+    "city": "Buenos Aires"
+  },
+  "ar-lanacion": {
+    "lat": -34.6037,
+    "lon": -58.3816,
+    "name": "La Nación",
+    "country": "AR",
+    "city": "Buenos Aires"
+  },
+  "ar-pagina12": {
+    "lat": -34.6037,
+    "lon": -58.3816,
+    "name": "Página/12",
+    "country": "AR",
+    "city": "Buenos Aires"
+  },
+  "br-folha": {
+    "lat": -23.5505,
+    "lon": -46.6333,
+    "name": "Folha de S.Paulo",
+    "country": "BR",
+    "city": "São Paulo"
+  },
+  "br-globo": {
+    "lat": -22.9068,
+    "lon": -43.1729,
+    "name": "O Globo",
+    "country": "BR",
+    "city": "Rio de Janeiro"
+  },
+  "br-estadao": {
+    "lat": -23.5505,
+    "lon": -46.6333,
+    "name": "Estadão",
+    "country": "BR",
+    "city": "São Paulo"
+  },
+  "cl-emol": {
+    "lat": -33.4489,
+    "lon": -70.6693,
+    "name": "Emol",
+    "country": "CL",
+    "city": "Santiago"
+  },
+  "cl-latercera": {
+    "lat": -33.4489,
+    "lon": -70.6693,
+    "name": "La Tercera",
+    "country": "CL",
+    "city": "Santiago"
+  },
+  "cl-biobio": {
+    "lat": -36.827,
+    "lon": -73.0498,
+    "name": "BioBioChile",
+    "country": "CL",
+    "city": "Concepción"
+  },
+  "co-eltiempo": {
+    "lat": 4.711,
+    "lon": -74.0721,
+    "name": "El Tiempo",
+    "country": "CO",
+    "city": "Bogotá"
+  },
+  "co-elespectador": {
+    "lat": 4.711,
+    "lon": -74.0721,
+    "name": "El Espectador",
+    "country": "CO",
+    "city": "Bogotá"
+  },
+  "co-semana": {
+    "lat": 4.711,
+    "lon": -74.0721,
+    "name": "Semana",
+    "country": "CO",
+    "city": "Bogotá"
+  },
+  "pe-elcomercio": {
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "name": "El Comercio",
+    "country": "PE",
+    "city": "Lima"
+  },
+  "pe-rpp": {
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "name": "RPP Noticias",
+    "country": "PE",
+    "city": "Lima"
+  },
+  "pe-larepublica": {
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "name": "La República",
+    "country": "PE",
+    "city": "Lima"
+  },
+  "ve-elnacional": {
+    "lat": 10.4806,
+    "lon": -66.9036,
+    "name": "El Nacional",
+    "country": "VE",
+    "city": "Caracas"
+  },
+  "ve-eluniversal": {
+    "lat": 10.4806,
+    "lon": -66.9036,
+    "name": "El Universal (VE)",
+    "country": "VE",
+    "city": "Caracas"
+  },
+  "ve-ultimasnoticias": {
+    "lat": 10.4806,
+    "lon": -66.9036,
+    "name": "Últimas Noticias",
+    "country": "VE",
+    "city": "Caracas"
+  },
+  "ec-eluniverso": {
+    "lat": -2.1709,
+    "lon": -79.9224,
+    "name": "El Universo",
+    "country": "EC",
+    "city": "Guayaquil"
+  },
+  "ec-elcomercio": {
+    "lat": -0.1807,
+    "lon": -78.4678,
+    "name": "El Comercio (EC)",
+    "country": "EC",
+    "city": "Quito"
+  },
+  "ec-eltelegrafo": {
+    "lat": -2.1709,
+    "lon": -79.9224,
+    "name": "El Telégrafo",
+    "country": "EC",
+    "city": "Guayaquil"
+  },
+  "bo-eldeber": {
+    "lat": -17.7833,
+    "lon": -63.1822,
+    "name": "El Deber",
+    "country": "BO",
+    "city": "Santa Cruz de la Sierra"
+  },
+  "bo-paginasiete": {
+    "lat": -16.4897,
+    "lon": -68.1193,
+    "name": "Página Siete",
+    "country": "BO",
+    "city": "La Paz"
+  },
+  "bo-larazon": {
+    "lat": -16.4897,
+    "lon": -68.1193,
+    "name": "La Razón",
+    "country": "BO",
+    "city": "La Paz"
+  },
+  "py-abc": {
+    "lat": -25.2637,
+    "lon": -57.5759,
+    "name": "ABC Color",
+    "country": "PY",
+    "city": "Asunción"
+  },
+  "py-ultimahora": {
+    "lat": -25.2637,
+    "lon": -57.5759,
+    "name": "Última Hora",
+    "country": "PY",
+    "city": "Asunción"
+  },
+  "py-lanacion": {
+    "lat": -25.2637,
+    "lon": -57.5759,
+    "name": "La Nación (PY)",
+    "country": "PY",
+    "city": "Asunción"
+  },
+  "uy-elpais": {
+    "lat": -34.9011,
+    "lon": -56.1645,
+    "name": "El País",
+    "country": "UY",
+    "city": "Montevideo"
+  },
+  "uy-elobservador": {
+    "lat": -34.9011,
+    "lon": -56.1645,
+    "name": "El Observador",
+    "country": "UY",
+    "city": "Montevideo"
+  },
+  "uy-larepublica": {
+    "lat": -34.9011,
+    "lon": -56.1645,
+    "name": "La República (UY)",
+    "country": "UY",
+    "city": "Montevideo"
+  },
+  "gy-stabroek": {
+    "lat": 6.8013,
+    "lon": -58.1551,
+    "name": "Stabroek News",
+    "country": "GY",
+    "city": "Georgetown"
+  },
+  "gy-kaieteur": {
+    "lat": 6.8013,
+    "lon": -58.1551,
+    "name": "Kaieteur News",
+    "country": "GY",
+    "city": "Georgetown"
+  },
+  "gy-guyanachronicle": {
+    "lat": 6.8013,
+    "lon": -58.1551,
+    "name": "Guyana Chronicle",
+    "country": "GY",
+    "city": "Georgetown"
+  },
+  "sr-dewest": {
+    "lat": 5.852,
+    "lon": -55.2038,
+    "name": "De West",
+    "country": "SR",
+    "city": "Paramaribo"
+  },
+  "sr-starnieuws": {
+    "lat": 5.852,
+    "lon": -55.2038,
+    "name": "Starnieuws",
+    "country": "SR",
+    "city": "Paramaribo"
+  },
+  "sr-suriname-herald": {
+    "lat": 5.852,
+    "lon": -55.2038,
+    "name": "Suriname Herald",
+    "country": "SR",
+    "city": "Paramaribo"
+  },
+  "gf-franceguyane": {
+    "lat": 4.9224,
+    "lon": -52.3135,
+    "name": "France-Guyane",
+    "country": "GF",
+    "city": "Cayenne"
+  },
+  "gf-radiopeyi": {
+    "lat": 4.9224,
+    "lon": -52.3135,
+    "name": "Radio Péyi",
+    "country": "GF",
+    "city": "Cayenne"
+  },
+  "gf-guyaweb": {
+    "lat": 4.9224,
+    "lon": -52.3135,
+    "name": "Guyaweb",
+    "country": "GF",
+    "city": "Cayenne"
+  },
+  "gn-us": {
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "name": "Google News (US)",
+    "country": "US",
+    "city": "Washington"
+  },
+  "gn-ca": {
+    "lat": 45.4215,
+    "lon": -75.6972,
+    "name": "Google News (Canada)",
+    "country": "CA",
+    "city": "Ottawa"
+  },
+  "gn-mx": {
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "name": "Google News (México)",
+    "country": "MX",
+    "city": "Mexico City"
+  },
+  "gn-ar": {
+    "lat": -34.6037,
+    "lon": -58.3816,
+    "name": "Google News (Argentina)",
+    "country": "AR",
+    "city": "Buenos Aires"
+  },
+  "gn-br": {
+    "lat": -15.8267,
+    "lon": -47.9218,
+    "name": "Google News (Brasil)",
+    "country": "BR",
+    "city": "Brasília"
+  },
+  "gn-cl": {
+    "lat": -33.4489,
+    "lon": -70.6693,
+    "name": "Google News (Chile)",
+    "country": "CL",
+    "city": "Santiago"
+  },
+  "gn-co": {
+    "lat": 4.711,
+    "lon": -74.0721,
+    "name": "Google News (Colombia)",
+    "country": "CO",
+    "city": "Bogotá"
+  },
+  "gn-pe": {
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "name": "Google News (Perú)",
+    "country": "PE",
+    "city": "Lima"
+  },
+  "gn-ve": {
+    "lat": 10.4806,
+    "lon": -66.9036,
+    "name": "Google News (Venezuela)",
+    "country": "VE",
+    "city": "Caracas"
+  },
+  "gn-ec": {
+    "lat": -0.1807,
+    "lon": -78.4678,
+    "name": "Google News (Ecuador)",
+    "country": "EC",
+    "city": "Quito"
+  },
+  "gn-bo": {
+    "lat": -16.4897,
+    "lon": -68.1193,
+    "name": "Google News (Bolivia)",
+    "country": "BO",
+    "city": "La Paz"
+  },
+  "gn-py": {
+    "lat": -25.2637,
+    "lon": -57.5759,
+    "name": "Google News (Paraguay)",
+    "country": "PY",
+    "city": "Asunción"
+  },
+  "gn-uy": {
+    "lat": -34.9011,
+    "lon": -56.1645,
+    "name": "Google News (Uruguay)",
+    "country": "UY",
+    "city": "Montevideo"
+  },
+  "gn-gy": {
+    "lat": 6.8013,
+    "lon": -58.1551,
+    "name": "Google News (Guyana)",
+    "country": "GY",
+    "city": "Georgetown"
+  },
+  "gn-sr": {
+    "lat": 5.852,
+    "lon": -55.2038,
+    "name": "Google News (Suriname)",
+    "country": "SR",
+    "city": "Paramaribo"
+  },
+  "gn-gf": {
+    "lat": 4.9224,
+    "lon": -52.3135,
+    "name": "Google News (Guyane)",
+    "country": "GF",
+    "city": "Cayenne"
+  }
+}

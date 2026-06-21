@@ -1,0 +1,14 @@
+{
+  "name": "geo-news-web",
+  "version": "0.0.1",
+  "description": "Reference UI for geo-news.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "underscore": "~1.6.0",
+    "backbone": "~1.1.0",
+    "leaflet": "~0.7.2"
+  },
+  "directory": "vendor"
+}
