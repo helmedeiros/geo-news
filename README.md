@@ -1,6 +1,5 @@
 # geo-news
 
-[![build status](https://api.travis-ci.org/helmedeiros/geo-news.svg?branch=master)](https://travis-ci.org/helmedeiros/geo-news)
 
 Geolocalised news for the Americas. **[Live demo](https://helmedeiros.github.io/geo-news/)**.
 
