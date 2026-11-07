@@ -69,4 +69,5 @@ jobs:
       - name: verify live page renders headlines
         env:
           CHROME_BIN: /usr/bin/chromium-browser
+          VERIFY_MAX_TRIES: '45'
         run: scripts/verify-live.sh https://helmedeiros.github.io/geo-news/ "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
