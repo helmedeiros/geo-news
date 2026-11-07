@@ -8,8 +8,9 @@
 set -euo pipefail
 
 URL="${1:-https://helmedeiros.github.io/geo-news/}"
-MAX_TRIES=18
-SLEEP_S=7
+EXPECTED_BUILD="${2:-}"
+MAX_TRIES="${VERIFY_MAX_TRIES:-18}"
+SLEEP_S="${VERIFY_SLEEP_S:-7}"
 
 find_chrome() {
   if [ "${CHROME_BIN:-}" != "" ] && [ -x "${CHROME_BIN}" ]; then
@@ -50,17 +51,36 @@ check_with_curl() {
   return 1
 }
 
+check_build() {
+  if [ -z "$EXPECTED_BUILD" ]; then
+    return 0
+  fi
+  local stamp
+  stamp=$(curl -sL --max-time 10 "${URL%/}/build.json?t=$(date +%s)$RANDOM" || true)
+  if echo "$stamp" | grep -qF "\"build\":\"$EXPECTED_BUILD\""; then
+    echo "verify-live: build $EXPECTED_BUILD is live at $URL"
+    return 0
+  fi
+  return 1
+}
+
 chrome=$(find_chrome || true)
 
 for attempt in $(seq 1 "$MAX_TRIES"); do
-  if [ -n "$chrome" ]; then
-    if check_with_chrome "$chrome"; then exit 0; fi
-  else
-    if check_with_curl; then exit 0; fi
+  if check_build; then
+    if [ -n "$chrome" ]; then
+      if check_with_chrome "$chrome"; then exit 0; fi
+    else
+      if check_with_curl; then exit 0; fi
+    fi
   fi
   echo "verify-live: attempt $attempt/$MAX_TRIES — retrying in ${SLEEP_S}s"
   sleep "$SLEEP_S"
 done
 
-echo "verify-live: $URL never rendered headlines" >&2
+if [ -n "$EXPECTED_BUILD" ]; then
+  echo "verify-live: $URL never served build $EXPECTED_BUILD with headlines" >&2
+else
+  echo "verify-live: $URL never rendered headlines" >&2
+fi
 exit 1
