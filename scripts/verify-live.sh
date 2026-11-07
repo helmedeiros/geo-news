@@ -34,7 +34,7 @@ check_with_chrome() {
   local html
   html=$("$chrome" --headless --disable-gpu --no-sandbox \
                    --virtual-time-budget=12000 --dump-dom "$URL" 2>/dev/null)
-  if echo "$html" | grep -q 'class="headline"'; then
+  if grep -q 'class="headline"' <<<"$html"; then
     echo "verify-live: chrome rendered headlines at $URL"
     return 0
   fi
@@ -44,7 +44,7 @@ check_with_chrome() {
 check_with_curl() {
   local html
   html=$(curl -sL --max-time 10 "$URL")
-  if echo "$html" | grep -q 'id="map"' && echo "$html" | grep -q 'js/app.js'; then
+  if grep -q 'id="map"' <<<"$html" && grep -q 'js/app.js' <<<"$html"; then
     echo "verify-live: static structure present at $URL (no JS run)"
     return 0
   fi
@@ -57,7 +57,7 @@ check_build() {
   fi
   local stamp
   stamp=$(curl -sL --max-time 10 "${URL%/}/build.json?t=$(date +%s)$RANDOM" || true)
-  if echo "$stamp" | grep -qF "\"build\":\"$EXPECTED_BUILD\""; then
+  if grep -qF "\"build\":\"$EXPECTED_BUILD\"" <<<"$stamp"; then
     echo "verify-live: build $EXPECTED_BUILD is live at $URL"
     return 0
   fi

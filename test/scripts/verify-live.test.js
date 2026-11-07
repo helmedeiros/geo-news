@@ -10,7 +10,12 @@ var PAGE = '<html><body><div id="map"></div>' +
   '<ul><li class="headline">Story</li></ul>' +
   '<script src="js/app.js"></script></body></html>';
 
-function startSite(buildFor) {
+function bigPage() {
+  var filler = new Array(20001).join('<li class="filler">padding</li>\n');
+  return PAGE.replace('</ul>', filler + '</ul>');
+}
+
+function startSite(buildFor, page) {
   var requests = { build: 0 };
   var server = http.createServer(function (req, res) {
     if (req.url.indexOf('/build.json') === 0) {
@@ -24,7 +29,7 @@ function startSite(buildFor) {
       return res.end(JSON.stringify({ build: build }));
     }
     res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(PAGE);
+    res.end(page || PAGE);
   });
   return { server: server, requests: requests };
 }
@@ -74,6 +79,22 @@ describe('scripts/verify-live.sh', function () {
     verify(site, 'run-2', function (code, out) {
       expect(code, out).to.equal(0);
       expect(site.requests.build).to.equal(3);
+      done();
+    });
+  });
+
+  it('passes when headlines sit early in a page larger than a pipe buffer', function (done) {
+    var site = startSite(function () { return 'run-2'; }, bigPage());
+    verify(site, 'run-2', function (code, out) {
+      expect(code, out).to.equal(0);
+      done();
+    });
+  });
+
+  it('fails when the live build renders no headlines', function (done) {
+    var empty = bigPage().replace('<li class="headline">Story</li>', '');
+    verify(startSite(function () { return 'run-2'; }, empty), 'run-2', function (code, out) {
+      expect(code, out).to.equal(1);
       done();
     });
   });
