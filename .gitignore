@@ -5,3 +5,4 @@ npm-debug.log
 coverage
 web/data/headlines.json
 web/data/og/
+web/build.json
